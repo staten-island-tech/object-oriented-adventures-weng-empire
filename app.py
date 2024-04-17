@@ -5,23 +5,39 @@ movies = open("./movies.json", encoding="utf8")
 ## create variable "data" that represents the enitre movie list
 data = json.load(movies)
 
-class Player():
+class Character():
     def __init__(self, name):
-        self.name = name 
-        self.health = 100
-        self.weapon = ["Old Blade"]
-        self.baseattack = 5
-        self.maxhealth = self.health
-        self.gold = 50
+        self.name = name
+        self.maxhealth = 100
+        self.attack = 10
+        self.gold = 0
+        self.weapon = ["Basic Sword"]
 
-    def attack(self):
-        attack = self.baseattack
-        if self.weapon == "Old Blade":
-            attack += 10
+class Goblin():
+    def __init__(self, name):
+        self.name = name
+        self.maxhealth = 80
+        self.attack = 7
+        self.goldgain = 20
 
+class Slime():
+    def __init__(self, name):
+        self.name = name
+        self.maxhealth = 50
+        self.attack = 5
+        self.goldgain = 10
 
-        
+class main():
+    print("Welcome to the game")
+    print("1.) Start")
+    print("2.) Load")
+    print("3.) Exit")
+    if 
 
-        
-
-
+class Knight():
+    def __init__(self, name):
+        self.name = name
+        self.maxhealth = 140
+        self.attack = 15
+        self. goldgain = 40
+        self.weapon = ["Sword"]
