@@ -14,18 +14,26 @@ class Character():
         self.weapon = ["Basic Sword"]
 
 class Goblin():
-    def __init__(self, name):
-        self.name = name
+    def __init__(self):
+        self.name = ["Goblin"]
         self.maxhealth = 80
         self.attack = 7
-        self.goldgain = 20
+        self.goldgain = random.randint(5,15)
 
 class Slime():
-    def __init__(self, name):
-        self.name = name
+    def __init__(self):
+        self.name = ["Slime"]
         self.maxhealth = 50
         self.attack = 5
-        self.goldgain = 10
+        self.goldgain = random.randint(1,10)
+
+class Knight():
+    def __init__(self):
+        self.name = ["Knight"]
+        self.maxhealth = 140
+        self.attack = 15
+        self. goldgain = random.randint(25,50)
+        self.weapon = ["Sword"]
 
 class main():
     print("Welcome to the game")
@@ -33,11 +41,3 @@ class main():
     print("2.) Load")
     print("3.) Exit")
     if 
-
-class Knight():
-    def __init__(self, name):
-        self.name = name
-        self.maxhealth = 140
-        self.attack = 15
-        self. goldgain = 40
-        self.weapon = ["Sword"]
