@@ -12,13 +12,31 @@ class Character():
         self.gold = 0
         self.weapon = ["Basic Sword"]
 
-class Goblin:
-    def __int__(self, name):
+class Goblin():
+    def __init__(self, name):
         self.name = name
         self.maxhealth = 80
         self.attack = 7
         self.goldgain = 20
 
-class Slime
-        
-        
+class Slime():
+    def __init__(self, name):
+        self.name = name
+        self.maxhealth = 50
+        self.attack = 5
+        self.goldgain = 10
+
+class main():
+    print("Welcome to the game")
+    print("1.) Start")
+    print("2.) Load")
+    print("3.) Exit")
+    if 
+
+class Knight():
+    def __init__(self, name):
+        self.name = name
+        self.maxhealth = 140
+        self.attack = 15
+        self. goldgain = 40
+        self.weapon = ["Sword"]
