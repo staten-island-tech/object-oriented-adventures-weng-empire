@@ -35,9 +35,26 @@ class Knight():
         self. goldgain = random.randint(25,50)
         self.weapon = ["Sword"]
 
-class main():
+def main():
     print("Welcome to the game")
     print("1.) Start")
     print("2.) Load")
     print("3.) Exit")
-    if 
+
+
+class Knight():
+    def __init__(self, name):
+        self.name = name
+        self.maxhealth = 140
+        self.attack = 15
+        self.goldgain = 40
+        self.weapon = ["Sword"]
+
+class Zombie():
+    def __init__(self, name):
+        self.name = name
+        self.maxhealth = 120
+        self.attack = 18
+        self.goldgain = 35
+
+
