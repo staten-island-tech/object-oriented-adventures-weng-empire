@@ -41,15 +41,6 @@ def main():
     print("2.) Load")
     print("3.) Exit")
 
-
-class Knight():
-    def __init__(self, name):
-        self.name = name
-        self.maxhealth = 140
-        self.attack = 15
-        self.goldgain = 40
-        self.weapon = ["Sword"]
-
 class Zombie():
     def __init__(self, name):
         self.name = name
@@ -57,4 +48,9 @@ class Zombie():
         self.attack = 18
         self.goldgain = 35
 
-
+class Mark():
+    def __init__(self, name):
+        self.name = name
+        self.maxhealth = 200000
+        self.attack = 1
+        self.goldgain = 0.0000000000000000000000000001
