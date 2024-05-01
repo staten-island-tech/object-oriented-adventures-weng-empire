@@ -1,5 +1,7 @@
 import json
 import random 
+import pickle
+
 ## Open the JSON file of movie data
 movies = open("./movies.json", encoding="utf8")
 ## create variable "data" that represents the enitre movie list
@@ -27,12 +29,12 @@ class Slime():
         self.attack = 5
         self.goldgain = random.randint(1,10)
 
-class Knight():
+class Knightmob():
     def __init__(self):
         self.name = ["Knight"]
         self.maxhealth = 140
         self.attack = 15
-        self. goldgain = random.randint(25,50)
+        self.goldgain = random.randint(25,50)
         self.weapon = ["Sword"]
 
 def main():
@@ -40,6 +42,9 @@ def main():
     print("1.) Start")
     print("2.) Load")
     print("3.) Exit")
+    choice = ("-> ")
+    if choice == "1":
+        start()
 
 
 class Knight():
