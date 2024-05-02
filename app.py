@@ -71,4 +71,11 @@ class Zombie():
         self.attack = 18
         self.goldgain = 35
 
+class Mark():
+    def __init__(self, name):
+        self.name = name
+        self.maxhealth = 200000
+        self.attack = 0.1
+        self.goldgain = 0.0000000000000000000000000001
 
+print(main)
