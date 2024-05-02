@@ -1,13 +1,14 @@
 import json
 import random 
-import pickle
+import os 
+import pickle 
 
 ## Open the JSON file of movie data
 movies = open("./movies.json", encoding="utf8")
 ## create variable "data" that represents the enitre movie list
 data = json.load(movies)
 
-class Character():
+class Player():
     def __init__(self, name):
         self.name = name
         self.maxhealth = 100
@@ -46,6 +47,14 @@ def main():
     if choice == "1":
         start()
 
+
+def start():
+    os.system('clear')
+    print("Welcome traveler, what is your name?: ")
+    option = input("--> ")
+    global PlayerIG
+    PlayerIG = Player(option)
+    
 
 class Knight():
     def __init__(self, name):
