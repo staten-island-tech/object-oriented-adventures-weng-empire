@@ -10,9 +10,9 @@ class Player():
         self.maxhealth = 100
         self.health = self.maxhealth
         self.attack = 10
-        self.gold = 20
-        self.potions = 0
-        self.weapon = ["Basic Sword"]
+        self.gold = 0
+        self.potions = 2
+        self.weapon = 'Basic Sword'
 
 class Goblin():
     def __init__(self):
@@ -75,21 +75,21 @@ class Start():
         option = input("--> ")
         global player 
         player = Player(option)
-        Menu.menu
+        Menu.menu()
 
 class Menu():
     def menu():
-        print("Name: %s") % player.name
-        print("Attack: %i") % player.attack
-        print("Gold: %i") % player.gold
-        print("Current Weapons: %s") % player.weapon
-        print("Potions: %i") % player.potions
-        print("Health: %i/%i\n") % (player.health, player.maxhealth)
+        print(f"Name: {player.name}")  
+        print(f"Attack: {player.attack}") 
+        print(f"Gold: {player.gold}") 
+        print(f"Current Weapons: {player.weapon}")  
+        print(f"Potions: {player.potions}") 
+        print(f"Health: {player.health}/{player.maxhealth}")
         print("1.) Fight")
         print("2.) Store")
         print("3.) Inventory")
         print("4.) Exit")
-        option = input("--> ")
+        option = input(" ")
         if option == "1":
             Enemypick.enemypick()
         elif option == "2":
@@ -182,8 +182,8 @@ class Run():
 class Win():
     def win():
         player.gold += enemy.goldgain
-        print("You have defeated the %s") % enemy.name
-        print("You found %i gold!") % enemy.goldgain
+        print("You have defeated the {enemy.name}")
+        print("You found {enemy.goldgain} gold!")
         option = input(' ')
         Menu.menu()
 
