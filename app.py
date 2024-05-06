@@ -1,5 +1,7 @@
 import json
 import random 
+import os
+import sys
 ## Open the JSON file of movie data
 movies = open("./movies.json", encoding="utf8")
 ## create variable "data" that represents the enitre movie list
@@ -9,6 +11,7 @@ class Character():
     def __init__(self, name):
         self.name = name
         self.maxhealth = 100
+        self.health = self.maxhealth
         self.attack = 10
         self.gold = 0
         self.weapon = ["Basic Sword"]
@@ -35,14 +38,6 @@ class Knight():
         self. goldgain = random.randint(25,50)
         self.weapon = ["Sword"]
 
-def main():
-    print("Welcome to the game")
-    print("1.) Start")
-    print("2.) Load")
-    print("3.) Exit")
-
-
-
 class Zombie():
     def __init__(self, name):
         self.name = name
@@ -57,4 +52,3 @@ class Mark():
         self.attack = 1
         self.goldgain = 0.0000000000000000000000000001
 
-print(main)
