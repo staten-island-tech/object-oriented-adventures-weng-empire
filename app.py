@@ -14,6 +14,7 @@ class Character():
         self.health = self.maxhealth
         self.attack = 10
         self.gold = 0
+        self.potions = 0
         self.weapon = ["Basic Sword"]
 
 class Goblin():
@@ -52,3 +53,16 @@ class Mark():
         self.attack = 1
         self.goldgain = 0.0000000000000000000000000001
 
+class Main():
+    def main():
+        print("Welcome!\n")
+        print("1.) Start")
+        print("2.) Exit")
+        option = input("-> ")
+        if option == "1":
+            start()
+        elif option == "2":
+            sys.exit()
+        else:
+            print('Please pick a valid option')
+            Main.main()
