@@ -4,6 +4,8 @@ movies = open("./movies.json", encoding="utf8")
 ## create variable "data" that represents the enitre movie list
 data = json.load(movies)
 
+inventory = []
+
 class Player():
     def __init__(self, name):
         self.name = name
@@ -11,8 +13,12 @@ class Player():
         self.health = self.maxhealth
         self.attack = 10
         self.gold = 0
+<<<<<<< Updated upstream
         self.potions = 2
-        self.weapon = 'Basic Sword'
+=======
+        self.potions = 0
+>>>>>>> Stashed changes
+        self.weapon = ["Basic Sword"]
 
 class Goblin():
     def __init__(self):
@@ -75,7 +81,7 @@ class Start():
         option = input("--> ")
         global player 
         player = Player(option)
-        Menu.menu()
+        Menu.menu
 
 class Menu():
     def menu():
@@ -89,7 +95,7 @@ class Menu():
         print("2.) Store")
         print("3.) Inventory")
         print("4.) Exit")
-        option = input(" ")
+        option = input("--> ")
         if option == "1":
             Enemypick.enemypick()
         elif option == "2":
@@ -104,11 +110,11 @@ class Menu():
 
 def attack(self):
     attack = self.attack
-    if self.weapon == "Basic Sword":
+    if self.weapon == ["Basic Sword"]:
         attack += 5
-    elif self.weapon == "Great Sword":
+    elif self.weapon == ["Great Sword"]:
         attack += 25
-    elif self.weapon == "Dragon Slayer":
+    elif self.weapon == ["Dragon Slayer"]:
         attack += 50
     return attack
 
@@ -182,8 +188,8 @@ class Run():
 class Win():
     def win():
         player.gold += enemy.goldgain
-        print("You have defeated the {enemy.name}")
-        print("You found {enemy.goldgain} gold!")
+        print("You have defeated the %s") % enemy.name
+        print("You found %i gold!") % enemy.goldgain
         option = input(' ')
         Menu.menu()
 
@@ -199,16 +205,14 @@ class Dead():
             sys.exit
 
 
-weapons = {"Great Sword"}
 class Store():
     def store():
         print("Welcome to the shop!")
         print("\nWhat would you like to buy?\n")
-        print("1.) Great Sword (50 Gold)")
+        print("1.) Katana (50 Gold)")
         print("2.) Dragon Slayer (200 Gold)")
-        print("3.) Potion (10 Gold)")
+        print("3.) AK-47 (500 Gold)")
         print("4.) Back")
         option = input(' ')
-
 
 Main.main()
