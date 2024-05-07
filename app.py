@@ -20,7 +20,9 @@ class Enemy():
         self.health = self.maxhealth
         self.attack = 5
         self.goldgain = random.randint(5,15)
-Goblin = Enemy()
+Goblin = Enemy(
+    
+)
 Knight = Enemy()
 Slime = Enemy()
 Zombie = Enemy()
@@ -31,12 +33,12 @@ class Main():
         print("2.) Exit")
         option = input("-> ")
         if option == "1":
-            St.start()
+            Start.start()
         elif option == "2":
             sys.exit()
         else:
             print('Please pick a valid option')
-            Ma.main()
+            Main.main()
 
 class Start():
     def start():
@@ -44,32 +46,27 @@ class Start():
         option = input("--> ")
         global player 
         player = Character(option)
-        Mn.menu
+        Menu.menu
 
 class Menu():
     def menu():
-        print("Name: %s") % player.name
-        print("Attack: %i") % player.attack
-        print("Gold: %i") % player.gold
-        print("Current Weapons: %s") % player.weapon
-        print("Potions: %i") % player.potions
-        print("Health: %i/%i\n") % (player.health, player.maxhealth)
+
         print("1.) Fight")
         print("2.) Store")
         print("3.) Inventory")
         print("4.) Exit")
         option = input("--> ")
         if option == "1":
-            Ep.enemypick()
+            Enemypick.enemypick()
         elif option == "2":
-            St.store()
+            Store.store()
         elif option == "3":
-            I.inventory()
+            Inventory.inventory()
         elif option == "4":
             sys.exit()
         else:
             print("Please pick a valid option")
-            Mn.menu()
+            Menu.menu()
 
 def attack(self):
     attack = self.attack
@@ -103,7 +100,7 @@ class Enemypick():
             enemy = Slime
         else:
             enemy = Zombie
-        F.fight()
+        Fight.fight()
 
 class Fight():
     def fight():
@@ -123,7 +120,7 @@ class Potionfight():
                 player.health = player.maxhealth
             print("You drank a potion!")
         option = input(' ')
-        F.fight()
+        Fight.fight()
 
 class Potionmenu():
     def potionmenu():
@@ -135,7 +132,7 @@ class Potionmenu():
                 player.health = player.maxhealth
             print("You drank a potion!")
         option = input(' ')
-        Mn.menu()
+        Menu.menu()
 
 class Run():
     def run():
@@ -143,7 +140,7 @@ class Run():
         if runchance == '1':
             print("You successfully ran away!")
             option = input(' ')
-            Mn.menu()
+            Menu.menu()
         else:
             print("You failed to get away!")
             option = input(' ')
@@ -151,10 +148,10 @@ class Run():
 class Win():
     def win():
         player.gold += enemy.goldgain
-        print(f"You have defeated {enemy.name}")
-        print(f"You found %i gold! {enemy.goldgain}")
+        print(f"You have defeated the {enemy.name}")
+        print(f"You found {enemy.goldgain} gold!")
         option = input(' ')
-        Mn.menu()
+        Menu.menu()
 
 class Dead():
     def dead():
@@ -163,7 +160,7 @@ class Dead():
         print("2.) Exit")
         option = input(' ')
         if option == '1':
-            St.start()
+            Start.start()
         elif option == '2':
             sys.exit
 
@@ -178,15 +175,4 @@ class Store():
         print("3.) Back")
         option = input(' ')
 
-Ma = Main()
-St = Start()
-Mn = Menu()
-I = Inventory()
-Eq = Equip()
-Ep = Enemypick()
-F = Fight()
-R = Run()
-W = Win()
-D = Dead()
-So = Store()
 Main.main()
