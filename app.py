@@ -30,7 +30,7 @@ class Slime():
         self.attack = 5
         self.goldgain = random.randint(1,10)
 
-class Knightmob():
+class Knight():
     def __init__(self):
         self.name = ["Knight"]
         self.maxhealth = 140
@@ -74,7 +74,7 @@ class Start():
         print("Hello, what is your name?")
         option = input("--> ")
         global player 
-        player = Character(option)
+        player = Player(option)
         Mn.menu
 
 class Menu():
