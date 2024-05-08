@@ -1,8 +1,4 @@
 import json, random, os, sys
-## Open the JSON file of movie data
-movies = open("./movies.json", encoding="utf8")
-## create variable "data" that represents the enitre movie list
-data = json.load(movies)
 
 class Player():
     def __init__(self, name):
@@ -10,8 +6,8 @@ class Player():
         self.maxhealth = 100
         self.health = self.maxhealth
         self.attack = 10
-        self.gold = 0
-        self.potions = 0
+        self.gold = 100
+        self.potions = 2
         self.weapon = ["Basic Sword"]
 
 class Goblin():
@@ -60,14 +56,14 @@ class Main():
         print("Welcome!\n")
         print("1.) Start")
         print("2.) Exit")
-        option = input("-> ")
+        option = input("--> ")
         if option == "1":
-            St.start()
+            Start.start()
         elif option == "2":
             sys.exit()
         else:
             print('Please pick a valid option')
-            Ma.main()
+            Main.main()
 
 class Start():
     def start():
@@ -75,40 +71,40 @@ class Start():
         option = input("--> ")
         global player 
         player = Player(option)
-        Mn.menu
+        Menu.menu()
 
 class Menu():
     def menu():
-        print("Name: %s") % player.name
-        print("Attack: %i") % player.attack
-        print("Gold: %i") % player.gold
-        print("Current Weapons: %s") % player.weapon
-        print("Potions: %i") % player.potions
-        print("Health: %i/%i\n") % (player.health, player.maxhealth)
+        print(f"Name: {player.name}")  
+        print(f"Attack: {player.attack}") 
+        print(f"Gold: {player.gold}") 
+        print(f"Current Weapons: {player.weapon}")  
+        print(f"Potions: {player.potions}") 
+        print(f"Health: {player.health}/{player.maxhealth}")
         print("1.) Fight")
         print("2.) Store")
         print("3.) Inventory")
         print("4.) Exit")
         option = input("--> ")
         if option == "1":
-            Ep.enemypick()
+            Enemypick.enemypick()
         elif option == "2":
-            St.store()
+            Store.store()
         elif option == "3":
-            I.inventory()
+            Inventory.inventory()
         elif option == "4":
             sys.exit()
         else:
             print("Please pick a valid option")
-            Mn.menu()
+            Menu.menu()
 
 def attack(self):
     attack = self.attack
-    if self.weapon == "Basic Sword":
+    if self.weapon == ["Basic Sword"]:
         attack += 5
-    elif self.weapon == "Great Sword":
+    elif self.weapon == ["Great Sword"]:
         attack += 25
-    elif self.weapon == "Dragon Slayer":
+    elif self.weapon == ["Dragon Slayer"]:
         attack += 50
     return attack
 
@@ -134,7 +130,7 @@ class Enemypick():
             enemy = Slime
         else:
             enemy = Zombie
-        F.fight()
+        Fight.fight() 
 
 class Fight():
     def fight():
@@ -153,8 +149,7 @@ class Potionfight():
             if player.health > player.maxhealth:
                 player.health = player.maxhealth
             print("You drank a potion!")
-        option = input(' ')
-        F.fight()
+        Fight.fight()
 
 class Potionmenu():
     def potionmenu():
@@ -165,59 +160,54 @@ class Potionmenu():
             if player.health > player.maxhealth:
                 player.health = player.maxhealth
             print("You drank a potion!")
-        option = input(' ')
-        Mn.menu()
+        Menu.menu()
 
 class Run():
     def run():
         runchance = random.randint(1, 2)
         if runchance == '1':
             print("You successfully ran away!")
-            option = input(' ')
-            Mn.menu()
+            Menu.menu()
         else:
             print("You failed to get away!")
-            option = input(' ')
+           
 
 class Win():
     def win():
         player.gold += enemy.goldgain
-        print("You have defeated the %s") % enemy.name
-        print("You found %i gold!") % enemy.goldgain
-        option = input(' ')
-        Mn.menu()
+        print(f"You have defeated the {enemy.name}") 
+        print(f"You found {enemy.goldgain} gold!") 
+        Menu.menu()
 
 class Dead():
     def dead():
         print("You have died")
         print("1.) Restart")
         print("2.) Exit")
-        option = input(' ')
+        option = input("--> ")
         if option == '1':
-            St.start()
+            Start.start()
         elif option == '2':
             sys.exit
 
-
-weapons = {"Great Sword"}
+weapons = ["Katana", "Dragon Slayer", "AK-47"]
 class Store():
     def store():
         print("Welcome to the shop!")
         print("\nWhat would you like to buy?\n")
-        print("1.) Great Sword")
-        print("2.) Dragon Slayer")
-        print("3.) Back")
-        option = input(' ')
+        print("1.) Katana (50 Gold)")
+        print("2.) Dragon Slayer (200 Gold)")
+        print("3.) AK-47 (500 Gold)")
+        print("4.) Potion (10 Gold)")
+        print("5.) Back")
+        option = input("--> ")
+        for weapon in weapons:
+            if option in weapons:
+                option = weapon 
+                if player.gold >= 50:
+                    player.gold -= 50
+                    player.weapon.append(option)
+                    print(f"You have purchased {option}")
+                    Store.store
 
-Ma = Main()
-St = Start()
-Mn = Menu()
-I = Inventory()
-Eq = Equip()
-Ep = Enemypick()
-F = Fight()
-R = Run()
-W = Win()
-D = Dead()
-So = Store()
 Main.main()
