@@ -1,4 +1,4 @@
-import json, random, os, sys
+import json, random, sys, time
 
 class Player():
     def __init__(self, name):
@@ -9,6 +9,7 @@ class Player():
         self.gold = 1000
         self.potions = 2
         self.weapon = ["Basic Sword"]
+        self.currentweapon = ["Basic Sword"]
 
 class Goblin():
     def __init__(self):
@@ -84,7 +85,8 @@ class Menu():
         print("1.) Fight")
         print("2.) Store")
         print("3.) Inventory")
-        print("4.) Exit")
+        print("4.) Heal")
+        print("5.) Exit")
         option = input("--> ")
         if option == "1":
             Enemypick.enemypick()
@@ -93,6 +95,8 @@ class Menu():
         elif option == "3":
             Inventory.inventory()
         elif option == "4":
+            Heal.heal()
+        elif option == "5":
             sys.exit()
         else:
             print("Please pick a valid option")
@@ -115,10 +119,41 @@ class Inventory():
         print("What do you want to do?")
         print("1.) Equip Weapon")
         print("2.) Go back")
+        option = input("--> ")
+        if option == "1":
+            Equip.equip()
+        elif option == "2":
+            Menu.menu()
+        else:
+            print("Please pick a valid option")
+            Inventory.inventory
 
 class Equip():
     def equip():
-        print("What do you want to equip?")
+        print(f"{player.weapon}")
+        print("What do you want to equip? (Write out full name of item)")
+        option = input("--> ").capitalize()
+        if option == "Katana":
+            player.currentweapon = ["Katana"]
+            print(f"{player.currentweapon} Equipped")
+            option = input(' ')
+            Menu.menu()
+        elif option == "Dragon Slayer":
+            player.currentweapon = ["Dragon Slayer"]
+            print(f"{player.currentweapon} Equipped")
+            option = input(' ')
+            Menu.menu()
+        elif option == "AK-47":
+            player.currentweapon = ["AK-47"]
+            print(f"{player.currentweapon} Equipped")
+            option = input(' ')
+            Menu.menu()
+        elif option == "Basic Sword":
+            player.currentweapon = ["Basic Sword"]
+            print(f"{player.currentweapon} Equipped")
+            option = input(' ')
+            Menu.menu()
+
 
 class Enemypick():
     def enemypick():
@@ -142,8 +177,8 @@ class Fight():
 def attackdamage():
     attackdamage()
 
-class Potionfight():
-    def potionfight():
+class Potion():
+    def potion():
         if player.potions == 0:
             print("You don't have any potions")
         else:
@@ -153,16 +188,10 @@ class Potionfight():
             print("You drank a potion!")
         Fight.fight()
 
-class Potionmenu():
-    def potionmenu():
-        if player.potions == 0:
-            print("You don't have any potions")
-        else:
-            player.health += 50
-            if player.health > player.maxhealth:
-                player.health = player.maxhealth
-            print("You drank a potion!")
-        Menu.menu()
+class Heal():
+    def heal():
+        option = input("-->")
+        Menu.menu
 
 class Run():
     def run():
