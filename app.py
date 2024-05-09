@@ -13,19 +13,19 @@ class Character():
         self.gold = 0
         self.potions = 0
         self.weapon = ["Basic Sword"]
+
 class Enemy():
     def __init__(self, name):
         self.name = name
-        self.maxhealth = 50
+        self.maxhealth = 80
         self.health = self.maxhealth
         self.attack = 5
         self.goldgain = random.randint(5,15)
-Goblin = Enemy(
-    
-)
+Goblin = Enemy()
 Knight = Enemy()
 Slime = Enemy()
 Zombie = Enemy()
+
 class Main():
     def main():
         print("Welcome!\n")
