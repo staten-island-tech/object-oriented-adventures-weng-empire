@@ -1,8 +1,4 @@
 import json, random, os, sys
-## Open the JSON file of movie data
-movies = open("./movies.json", encoding="utf8")
-## create variable "data" that represents the enitre movie list
-data = json.load(movies)
 
 class Player():
     def __init__(self, name):
@@ -12,7 +8,7 @@ class Player():
         self.attack = 10
         self.gold = 1000
         self.potions = 2
-        self.weapon = 'Basic Sword'
+        self.weapon = ["Basic Sword"]
 
 class Goblin():
     def __init__(self):
@@ -60,7 +56,7 @@ class Main():
         print("Welcome!\n")
         print("1.) Start")
         print("2.) Exit")
-        option = input("-> ")
+        option = input("--> ")
         if option == "1":
             Start.start()
         elif option == "2":
@@ -89,7 +85,7 @@ class Menu():
         print("2.) Store")
         print("3.) Inventory")
         print("4.) Exit")
-        option = input(" ")
+        option = input("--> ")
         if option == "1":
             Enemypick.enemypick()
         elif option == "2":
@@ -104,11 +100,11 @@ class Menu():
 
 def attack(self):
     attack = self.attack
-    if self.weapon == "Basic Sword":
+    if self.weapon == ["Basic Sword"]:
         attack += 5
     elif self.weapon == "Katana":
         attack += 25
-    elif self.weapon == "Dragon Slayer":
+    elif self.weapon == ["Dragon Slayer"]:
         attack += 50
     elif attack.weapon == "AK-47":
         attack += 100
@@ -136,7 +132,7 @@ class Enemypick():
             enemy = Slime
         else:
             enemy = Zombie
-        Fight.fight()
+        Fight.fight() 
 
 class Fight():
     def fight():
@@ -155,7 +151,6 @@ class Potionfight():
             if player.health > player.maxhealth:
                 player.health = player.maxhealth
             print("You drank a potion!")
-        option = input(' ')
         Fight.fight()
 
 class Potionmenu():
@@ -167,7 +162,6 @@ class Potionmenu():
             if player.health > player.maxhealth:
                 player.health = player.maxhealth
             print("You drank a potion!")
-        option = input(' ')
         Menu.menu()
 
 class Run():
@@ -175,18 +169,16 @@ class Run():
         runchance = random.randint(1, 2)
         if runchance == '1':
             print("You successfully ran away!")
-            option = input(' ')
             Menu.menu()
         else:
             print("You failed to get away!")
-            option = input(' ')
+           
 
 class Win():
     def win():
         player.gold += enemy.goldgain
-        print("You have defeated the {enemy.name}")
-        print("You found {enemy.goldgain} gold!")
-        option = input(' ')
+        print(f"You have defeated the {enemy.name}") 
+        print(f"You found {enemy.goldgain} gold!") 
         Menu.menu()
 
 class Dead():
@@ -194,7 +186,7 @@ class Dead():
         print("You have died")
         print("1.) Restart")
         print("2.) Exit")
-        option = input(' ')
+        option = input("--> ")
         if option == '1':
             Start.start()
         elif option == '2':
