@@ -102,59 +102,6 @@ class Menu():
             print("Please pick a valid option")
             Menu.menu()
 
-def attack(self):
-    attack = self.attack
-    if self.weapon == ["Basic Sword"]:
-        attack += 5
-    elif self.weapon == "Katana":
-        attack += 25
-    elif self.weapon == ["Dragon Slayer"]:
-        attack += 50
-    elif attack.weapon == "AK-47":
-        attack += 100
-    return attack
-
-class Inventory():
-    def inventory():
-        print("What do you want to do?")
-        print("1.) Equip Weapon")
-        print("2.) Go back")
-        option = input("--> ")
-        if option == "1":
-            Equip.equip()
-        elif option == "2":
-            Menu.menu()
-        else:
-            print("Please pick a valid option")
-            Inventory.inventory
-
-class Equip():
-    def equip():
-        print(f"{player.weapon}")
-        print("What do you want to equip? (Write out full name of item)")
-        option = input("--> ").capitalize()
-        if option == "Katana":
-            player.currentweapon = ["Katana"]
-            print(f"{player.currentweapon} Equipped")
-            option = input(' ')
-            Menu.menu()
-        elif option == "Dragon Slayer":
-            player.currentweapon = ["Dragon Slayer"]
-            print(f"{player.currentweapon} Equipped")
-            option = input(' ')
-            Menu.menu()
-        elif option == "AK-47":
-            player.currentweapon = ["AK-47"]
-            print(f"{player.currentweapon} Equipped")
-            option = input(' ')
-            Menu.menu()
-        elif option == "Basic Sword":
-            player.currentweapon = ["Basic Sword"]
-            print(f"{player.currentweapon} Equipped")
-            option = input(' ')
-            Menu.menu()
-
-
 class Enemypick():
     def enemypick():
         global enemy
@@ -168,40 +115,37 @@ class Enemypick():
         else:
             enemy = Zombie
         Fight.fight() 
-
+ 
+fighting = "Y"
 class Fight():
-    def fight():
-        print()
-    fight()
-
-def attackdamage():
-    attackdamage()
-
-class Potion():
-    def potion():
-        if player.potions == 0:
-            print("You don't have any potions")
-        else:
-            player.health += 50
-            if player.health > player.maxhealth:
-                player.health = player.maxhealth
-            print("You drank a potion!")
-        Fight.fight()
-
-class Heal():
-    def heal():
-        option = input("-->")
-        Menu.menu
+    while fighting == "Y":
+        def fight():
+            print(f"You come across a {enemy}!")
+            print("1.) Attack")
+            print("2.) Defend")
+            print("3.) Potion")
+            print("4.) Run")
+            pattack = random.randint(1,3)
+            eattack = random.randint(1,2)
+            if pattack == 1: 
+                print("You missed!")
+            else: 
+                enemy.health -= player.attack
+                print(f"You dealt {player.attack} damage!")
+                print(f"{enemy} {enemy.health}/{enemy.maxhealth}HP")
+                if enemy.health <= 0:
+                    fighting != "Y"
+                    Win.win
 
 class Run():
     def run():
         runchance = random.randint(1, 2)
         if runchance == '1':
-            print("You successfully ran away!")
+            fighting != "Y"
+            print("You successfully ran away")
             Menu.menu()
         else:
             print("You failed to get away!")
-           
 
 class Win():
     def win():
@@ -221,7 +165,72 @@ class Dead():
         elif option == '2':
             sys.exit
 
+def attackdamage(self):
+    attack = self.attack
+    if self.weapon == ["Basic Sword"]:
+        attack += 5
+    elif self.weapon == "Katana":
+        attack += 25
+    elif self.weapon == ["Dragon Slayer"]:
+        attack += 50
+    elif attack.weapon == "AK-47":
+        attack += 100
 
+class Potion():
+    def potion():
+        if player.potions == 0:
+            print("You don't have any potions")
+        else:
+            player.health += 50
+            if player.health > player.maxhealth:
+                player.health = player.maxhealth
+            print("You drank a potion!")
+        Fight.fight()
+
+class Heal():
+    def heal():
+        option = input("-->")
+        Menu.menu
+
+class Inventory():
+    def inventory():
+        print("What do you want to do?")
+        print("1.) Equip Weapon")
+        print("2.) Go back")
+        option = input("--> ")
+        if option == "1":
+            Equip.equip()
+        elif option == "2":
+            Menu.menu()
+        else:
+            print("Please pick a valid option")
+            Inventory.inventory
+
+class Equip():
+    def equip():
+        print(f"{player.weapon}")
+        print("What do you want to equip? (Write out full name of item)")
+        option = input("--> ").title()
+        if option == "Katana":
+            player.currentweapon = ["Katana"]
+            print(f"{option} Equipped")
+            option = input(' ')
+            Menu.menu()
+        elif option == "Dragon Slayer":
+            player.currentweapon = ["Dragon Slayer"]
+            print(f"{option} Equipped")
+            option = input(' ')
+            Menu.menu()
+        elif option == "AK-47":
+            player.currentweapon = ["AK-47"]
+            print(f"{option} Equipped")
+            option = input(' ')
+            Menu.menu()
+        elif option == "Basic Sword":
+            player.currentweapon = ["Basic Sword"]
+            print(f"{option} Equipped")
+            option = input(' ')
+            Menu.menu()
 
 class Store():
     def store():
