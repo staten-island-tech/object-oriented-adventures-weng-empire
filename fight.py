@@ -1,5 +1,5 @@
-import sys, main, random
-
+import sys, random
+from main import Goblin, Knight, Slime, Zombie, player, Menu, Start
 
 
 
@@ -37,6 +37,15 @@ class Fight():
                 if enemy.health <= 0:
                     fighting != "Y"
                     Win.win
+            if eattack == 1:
+                print(f"The {enemy} missed!")
+            else: 
+                player.health -= enemy.attack
+                print(f"The {enemy} dealt {enemy.attack} damage!")
+                print(f"{player.health}/{player.maxhealth}HP")
+                if player.health <= 0:
+                    fighting != "Y"
+                    Dead.dead
 
 
 
