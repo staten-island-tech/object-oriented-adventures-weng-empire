@@ -1,4 +1,4 @@
-import sys, random
+import sys, random, time 
 from main import Goblin, Knight, Slime, Zombie, player, Menu, Start
 
 
@@ -30,6 +30,7 @@ class Fight():
             eattack = random.randint(1,2)
             if pattack == 1: 
                 print("You missed!")
+                time.sleep(1)
             else: 
                 enemy.health -= player.attack
                 print(f"You dealt {player.attack} damage!")
@@ -37,6 +38,7 @@ class Fight():
                 if enemy.health <= 0:
                     fighting != "Y"
                     Win.win
+                    break
             if eattack == 1:
                 print(f"The {enemy} missed!")
             else: 
@@ -46,6 +48,7 @@ class Fight():
                 if player.health <= 0:
                     fighting != "Y"
                     Dead.dead
+                    break
 
 
 
