@@ -38,7 +38,6 @@ class Fight():
                 if enemy.health <= 0:
                     fighting != "Y"
                     Win.win
-                    break
             if eattack == 1:
                 print(f"The {enemy} missed!")
             else: 
@@ -48,9 +47,6 @@ class Fight():
                 if player.health <= 0:
                     fighting != "Y"
                     Dead.dead
-                    break
-
-
 
 class Run():
     def run():

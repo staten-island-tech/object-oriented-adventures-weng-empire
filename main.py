@@ -65,7 +65,7 @@ class Main():
         else:
             print('Please pick a valid option')
             Main.main()
-    main()
+Main.main()
 
 class Start():
     def start():
@@ -296,5 +296,5 @@ class Store():
             print("Please pick a valid option")
             Store.store()
 
-Main.main()
+
 
