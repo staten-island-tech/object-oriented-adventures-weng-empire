@@ -1,7 +1,16 @@
 import sys, random, time 
-from main import Goblin, Knight, Slime, Zombie, player, Menu, Start
-
-
+from main import Menu, Start, player
+from enemy import Goblin, Knight, Slime, Zombie
+def attackdamage(self):
+    attack = self.attack
+    if self.weapon == ["Basic Sword"]:
+        attack += 5
+    elif self.weapon == "Katana":
+        attack += 25
+    elif self.weapon == ["Dragon Slayer"]:
+        attack += 50
+    elif attack.weapon == "AK-47":
+        attack += 100
 
 class Enemypick():
     def enemypick():
