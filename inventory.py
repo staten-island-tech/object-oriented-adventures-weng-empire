@@ -1,4 +1,4 @@
-from main import Menu, player
+from imports import Menu, player
 
 
 class Inventory():

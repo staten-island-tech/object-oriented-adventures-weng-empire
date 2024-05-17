@@ -1,8 +1,8 @@
 import json, sys
-from fight import Enemypick, Fight
+from fight import Enemypick
 from enemy import Player
 from store import Store
-from inventory import Inventory, Equip
+from inventory import Inventory
 
 class Main():
     def main(): 
@@ -55,21 +55,11 @@ class Menu():
             print("Please pick a valid option")
             Menu.menu()
 
-class Potion():
-    def potion():
-        if player.potions == 0:
-            print("You don't have any potions")
-        else:
-            player.health += 50
-            if player.health > player.maxhealth:
-                player.health = player.maxhealth
-            print("You drank a potion!")
-        Fight.fight()
-
 class Heal():
     def heal():
         option = input("-->")
         Menu.menu
+
 
 
 
