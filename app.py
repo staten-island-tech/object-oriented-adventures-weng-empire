@@ -96,7 +96,7 @@ class Enemypick():
             enemy = Goblin
         elif enemynum == 2:
             enemy = Knight
-        elif enemynum == 3:
+        elif enemynum == 3 :
             enemy = Slime
         else:
             enemy = Zombie
@@ -176,3 +176,20 @@ class Store():
         option = input(' ')
 
 Main.main()
+
+class Abilities():
+    def __init__(self, name, effects):
+        self.name = name
+        self.attack = []
+        self.effects = effects
+
+class Boss():
+    def __init__(self, name, weapon, abilities):
+        self.name = name
+        self.maxhealth = []
+        self.health = self.maxhealth
+        self.attack = []
+        self.weapon = weapon
+        self.abilities = abilities
+        self.goldgain = []
+
