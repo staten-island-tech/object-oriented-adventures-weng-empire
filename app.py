@@ -182,6 +182,9 @@ class Abilities():
         self.name = name
         self.attack = []
         self.effects = effects
+        def castabilities():
+            print(self.effects)
+            print(self.attack)
 
 class Boss():
     def __init__(self, name, weapon, abilities):
@@ -192,4 +195,3 @@ class Boss():
         self.weapon = weapon
         self.abilities = abilities
         self.goldgain = []
-
