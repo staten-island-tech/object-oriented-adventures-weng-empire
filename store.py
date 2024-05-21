@@ -1,4 +1,4 @@
-from main import player, Menu
+""" from main import player, Menu
 
 
 class Store():
@@ -62,4 +62,4 @@ class Store():
             Menu.menu()
         else:
             print("Please pick a valid option")
-            Store.store()
+            Store.store() """

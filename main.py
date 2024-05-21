@@ -1,4 +1,4 @@
-import json, sys
+""" import json, sys
 from fight import Enemypick
 from enemy import Player
 from store import Store
@@ -13,9 +13,9 @@ class Main():
         if option == "1":
             def start():
                 print("Hello, what is your name?")
-                option = input("--> ")
-                global player 
-                player = Player(option)
+                name = input("--> ")
+                global player
+                player = Player(name)
                 Menu.menu()
             start()
         elif option == "2":
@@ -60,3 +60,4 @@ class Heal():
 
 
 
+ """

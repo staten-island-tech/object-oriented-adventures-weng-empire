@@ -1,4 +1,4 @@
-import sys, random, time 
+""" import sys, random, time 
 from imports import Menu, player
 from enemy import Goblin, Knight, Slime, Zombie
 
@@ -117,4 +117,4 @@ class Dead():
         if option == '1':
             Menu.menu()
         elif option == '2':
-            sys.exit
+            sys.exit """
