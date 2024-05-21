@@ -194,4 +194,4 @@ class Boss():
         self.attack = []
         self.weapon = weapon
         self.abilities = abilities
-        self.goldgain = []
+        self.goldgain = []  
