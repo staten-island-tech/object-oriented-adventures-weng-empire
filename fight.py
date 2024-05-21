@@ -1,5 +1,5 @@
 import sys, random, time 
-from imports import Menu, Start, player
+from imports import Menu, player
 from enemy import Goblin, Knight, Slime, Zombie
 
 def attackdamage(self):
@@ -111,10 +111,10 @@ class Win():
 class Dead():
     def dead():
         print("You have died")
-        print("1.) Restart")
+        print("1.) Return")
         print("2.) Exit")
         option = input("--> ")
         if option == '1':
-            Start.start()
+            Menu.menu()
         elif option == '2':
             sys.exit

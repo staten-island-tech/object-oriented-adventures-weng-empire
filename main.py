@@ -23,8 +23,6 @@ class Main():
         else:
             print('Please pick a valid option')
             Main.main()
-Main.main()
-
 
 class Menu():
     def menu():
