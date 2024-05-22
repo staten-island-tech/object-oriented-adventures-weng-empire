@@ -13,9 +13,15 @@ class Main():
         if option == "1":
             def start():
                 print("Hello, what is your name?")
+<<<<<<< HEAD
                 option = input("--> ")
                 global player 
                 player = Player(option)
+=======
+                name = input("--> ")
+                global player
+                player = Player(name)
+>>>>>>> b5f9957ff2e25586e55d5c5827b8d894a3cfa48c
                 Menu.menu()
             start()
         elif option == "2":

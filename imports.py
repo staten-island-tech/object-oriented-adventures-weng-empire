@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import sys, random
+=======
+""" import sys, random
+>>>>>>> b5f9957ff2e25586e55d5c5827b8d894a3cfa48c
 
 class Player():
     def __init__(self, name):
@@ -11,6 +15,7 @@ class Player():
         self.weapon = ["Basic Sword"]
         self.currentweapon = ["Basic Sword"]
 
+<<<<<<< HEAD
 class Main():
     def main(): 
         print("Welcome!\n")
@@ -33,6 +38,8 @@ class Main():
 Main.main()
 
 
+=======
+>>>>>>> b5f9957ff2e25586e55d5c5827b8d894a3cfa48c
 class Menu():
     def menu():
          print(f"Name: {player.name}")  
@@ -151,4 +158,8 @@ class Store():
             Menu.menu()
         else:
             print("Please pick a valid option")
+<<<<<<< HEAD
             Store.store()
+=======
+            Store.store() """
+>>>>>>> b5f9957ff2e25586e55d5c5827b8d894a3cfa48c

@@ -117,4 +117,8 @@ class Dead():
         if option == '1':
             Menu.menu()
         elif option == '2':
+<<<<<<< HEAD
             sys.exit
+=======
+            sys.exit
+>>>>>>> b5f9957ff2e25586e55d5c5827b8d894a3cfa48c

@@ -62,4 +62,8 @@ class Store():
             Menu.menu()
         else:
             print("Please pick a valid option")
+<<<<<<< HEAD
             Store.store()
+=======
+            Store.store()
+>>>>>>> b5f9957ff2e25586e55d5c5827b8d894a3cfa48c
