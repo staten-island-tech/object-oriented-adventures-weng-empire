@@ -9,19 +9,19 @@ class Player():
         self.gold = 100
         self.potions = 2
         self.weapon = ["Basic Sword"]
+
 class Enemy():
     def __init__(self, name):
         self.name = name
-        self.maxhealth = 50
+        self.maxhealth = 80
         self.health = self.maxhealth
         self.attack = 5
         self.goldgain = random.randint(5,15)
-Goblin = Enemy(
-    
-)
+Goblin = Enemy()
 Knight = Enemy()
 Slime = Enemy()
 Zombie = Enemy()
+
 class Main():
     def main():
         print("Welcome!\n")
@@ -97,7 +97,7 @@ class Enemypick():
             enemy = Goblin
         elif enemynum == 2:
             enemy = Knight
-        elif enemynum == 3:
+        elif enemynum == 3 :
             enemy = Slime
         else:
             enemy = Zombie
@@ -186,3 +186,22 @@ class Store():
                     Store.store
 
 Main.main()
+
+class Abilities():
+    def __init__(self, name, effects):
+        self.name = name
+        self.attack = []
+        self.effects = effects
+        def castabilities():
+            print(self.effects)
+            print(self.attack)
+
+class Boss():
+    def __init__(self, name, weapon, abilities):
+        self.name = name
+        self.maxhealth = []
+        self.health = self.maxhealth
+        self.attack = []
+        self.weapon = weapon
+        self.abilities = abilities
+        self.goldgain = []
