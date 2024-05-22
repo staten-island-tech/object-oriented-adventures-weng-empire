@@ -1,3 +1,7 @@
 {
+<<<<<<< HEAD
     "python.analysis.autoImportCompletions": false
+=======
+    "python.analysis.typeCheckingMode": "off"
+>>>>>>> Weiming
 }
