@@ -1,4 +1,4 @@
-""" import sys, random
+import sys, random
 
 class Player():
     def __init__(self, name):
@@ -10,6 +10,11 @@ class Player():
         self.potions = 2
         self.weapon = ["Basic Sword"]
         self.currentweapon = ["Basic Sword"]
+        global player
+        player = Player(name)
+
+
+
 
 class Menu():
     def menu():
@@ -129,4 +134,4 @@ class Store():
             Menu.menu()
         else:
             print("Please pick a valid option")
-            Store.store() """
+            Store.store()

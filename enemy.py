@@ -1,4 +1,4 @@
-""" import random
+import random
 
 class Player():
     def __init__(self, name):
@@ -51,4 +51,3 @@ class Mark():
         self.health = self.maxhealth
         self.attack = 0.05
         self.goldgain = 0.000000000000001
- """

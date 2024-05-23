@@ -1,5 +1,6 @@
 import json, sys, random
 
+""" weapons = ['Basic Sword', 'Katana', 'Dragon Slayer', 'Odachi'] """
 class Player():
     def __init__(self, name):
         self.name = name
@@ -52,18 +53,16 @@ class Mark():
         self.attack = 0.05
         self.goldgain = 0.000000000000001
 
-
 def attackdamage(self):
     attack = self.attack
     if self.weapon == ["Basic Sword"]:
         attack += 5
-    elif self.weapon == "Katana":
+    elif self.weapon == ["Katana"]:
         attack += 25
     elif self.weapon == ["Dragon Slayer"]:
         attack += 50
-    elif attack.weapon == "AK-47":
+    elif attack.weapon == ["Odachi"]:
         attack += 100
-
 
 def enemypick():
     global enemy
@@ -78,7 +77,6 @@ def enemypick():
         enemy = Zombie
     fight() 
  
-
 def fight():
     fighting = "Y"
     while fighting == "Y":
@@ -151,7 +149,6 @@ def fight():
                     print("You failed to get away!")
             run()
                 
-
 def win():
     player.gold += enemy.goldgain
     print(f"You have defeated the {enemy.name}") 
@@ -168,13 +165,23 @@ def dead():
     elif option == '2':
         sys.exit
 
-
 def inventory():
     print("What do you want to do?")
     print("1.) Equip Weapon")
     print("2.) Go back")
     option = input("--> ")
     if option == "1":
+        def equip():
+            print(f"{player.weapon}\n")
+            print("What do you want to equip? (Write out full name of item)\n")
+            option_2 = input("--> ").title()
+            if option_2 in player.weapon:
+                player.currentweapon = player.weapon[player.weapon.index(option_2)]
+                print(f"You have equipped {player.currentweapon}")
+                menu()
+            else: 
+                print("That is not a valid option")
+                equip()
         equip()
     elif option == "2":
         menu()
@@ -182,40 +189,12 @@ def inventory():
         print("Please pick a valid option")
         inventory()
 
-
-def equip():
-    print(f"{player.weapon}")
-    print("What do you want to equip? (Write out full name of item)")
-    option = input("--> ").title()
-    if option == "Katana":
-        player.currentweapon = ["Katana"]
-        print(f"{option} Equipped")
-        option = input(' ')
-        menu()
-    elif option == "Dragon Slayer":
-        player.currentweapon = ["Dragon Slayer"]
-        print(f"{option} Equipped")
-        option = input(' ')
-        menu()
-    elif option == "AK-47":
-        player.currentweapon = ["AK-47"]
-        print(f"{option} Equipped")
-        option = input(' ')
-        menu()
-    elif option == "Basic Sword":
-        player.currentweapon = ["Basic Sword"]
-        print(f"{option} Equipped")
-        option = input(' ')
-        menu()
-    else: 
-        print("That is not a valid option")
-        equip()
 def store():
-    print("Welcome to the Store!")
-    print("\nWhat would you like to purchase?\n")
+    print("Welcome to the Store!\n")
+    print("What would you like to purchase?\n")
     print("1.) Katana (50 Gold)")
     print("2.) Dragon Slayer (200 Gold)")
-    print("3.) AK-47 (500 Gold)")
+    print("3.) Odachi (500 Gold)")
     print("4.) Potion (10 Gold)")
     print("5.) Back")
     option = input(' ')
@@ -224,9 +203,9 @@ def store():
         if player.gold >= 50:
             player.gold -= 50
             player.weapon.append(weapon)
-            print(f"You have bought a Katana")
+            print("You have bought a Katana")
             option = input(' ')
-            store()
+            menu()
         else:
             print("You don't have enough gold")
             option = input(' ')
@@ -236,21 +215,21 @@ def store():
         if player.gold >= 200:
             player.gold -= 200
             player.weapon.append(weapon)
-            print(f"You have bought the Dragon Slayer")
+            print("You have bought the Dragon Slayer")
             option = input(' ')
-            store()
+            menu()
         else:
             print("You don't have enough gold")
             option = input(' ')
             store()
     elif option == "3":
-        weapon = "AK-47"
+        weapon = "Odachi"
         if player.gold >= 500:
             player.gold -= 500
             player.weapon.append(weapon)
-            print(f"You have bought an AK-47")
+            print("You have bought an Odachi")
             option = input(' ')
-            store()
+            menu()
         else:
             print("You don't have enough gold")
             option = input(' ')
@@ -276,7 +255,8 @@ def menu():
     print(f"Name: {player.name}")  
     print(f"Attack: {player.attack}") 
     print(f"Gold: {player.gold}") 
-    print(f"Current Weapons: {player.weapon}")  
+    print(f"Weapons: {player.weapon}")  
+    print(f"Equipped Weapon: {player.currentweapon}")
     print(f"Potions: {player.potions}") 
     print(f"Health: {player.health}/{player.maxhealth}")
     print("1.) Fight")

@@ -1,4 +1,4 @@
-""" from imports import Menu, player
+from imports import Menu, player
 
 
 class Inventory():
@@ -40,4 +40,3 @@ class Equip():
             print(f"{option} Equipped")
             option = input(' ')
             Menu.menu()
- """
