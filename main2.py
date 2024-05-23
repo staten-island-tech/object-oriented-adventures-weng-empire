@@ -207,10 +207,12 @@ def equip():
         print(f"{option} Equipped")
         option = input(' ')
         menu()
-
+    else: 
+        print("That is not a valid option")
+        equip()
 def store():
     print("Welcome to the Store!")
-    print("\nWhat would you like to purchase? (Enter full name of item)\n")
+    print("\nWhat would you like to purchase?\n")
     print("1.) Katana (50 Gold)")
     print("2.) Dragon Slayer (200 Gold)")
     print("3.) AK-47 (500 Gold)")
@@ -270,9 +272,6 @@ def store():
         print("Please pick a valid option")
         store()
 
-
-
-
 def menu():
     print(f"Name: {player.name}")  
     print(f"Attack: {player.attack}") 
@@ -292,7 +291,9 @@ def menu():
         store()
     elif option == "3":
         inventory()
-   
+    elif option == "4":
+        inventory()
+        #placeholder for heal
     elif option == "5":
         sys.exit()
     else:
