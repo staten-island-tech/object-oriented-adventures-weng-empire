@@ -5,25 +5,6 @@ from store import Store
 from inventory import Inventory
 
 
-def main(): 
-    print("Welcome!\n")
-    print("1.) Start")
-    print("2.) Exit")
-    option = input("--> ")
-    if option == "1":
-        def start():
-            print("Hello, what is your name?")
-            name = input("--> ")
-            global player
-            player = Player(name)
-            menu()
-        start()
-    elif option == "2":
-        sys.exit()
-    else:
-        print('Please pick a valid option')
-        main()
-
 def menu():
         print(f"Name: {player.name}")  
         print(f"Attack: {player.attack}") 
@@ -51,11 +32,23 @@ def menu():
             print("Please pick a valid option")
             menu()
 
-class Heal():
-     def heal():
-         option = input("-->")
-         menu
-
-
+def main(): 
+    print("Welcome!\n")
+    print("1.) Start")
+    print("2.) Exit")
+    option = input("--> ")
+    if option == "1":
+        def start():
+            print("Hello, what is your name?")
+            name = input("--> ")
+            global player
+            player = Player(name)
+            menu()
+        start()
+    elif option == "2":
+        sys.exit()
+    else:
+        print('Please pick a valid option')
+        main()
 
 

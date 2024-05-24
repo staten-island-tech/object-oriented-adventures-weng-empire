@@ -1,11 +1,11 @@
-import json, sys, random
+import json, sys, random, os
 
 """ weapons = ['Basic Sword', 'Katana', 'Dragon Slayer', 'Odachi'] """
 class Player():
     def __init__(self, name):
         self.name = name
         self.maxhealth = 100
-        self.health = self.maxhealth
+        self.health = 10
         self.attack = 10
         self.gold = 1000
         self.potions = 2
@@ -53,16 +53,35 @@ class Mark():
         self.attack = 0.05
         self.goldgain = 0.000000000000001
 
-def attackdamage(self):
-    attack = self.attack
-    if self.weapon == ["Basic Sword"]:
-        attack += 5
-    elif self.weapon == ["Katana"]:
-        attack += 25
-    elif self.weapon == ["Dragon Slayer"]:
-        attack += 50
-    elif attack.weapon == ["Odachi"]:
-        attack += 100
+def heal():
+    healchance = random.randint(1,10)
+    if healchance == 1 or 2 or 3 or 4:
+        player.health += 10
+        if player.health >= player.maxhealth:
+            player.health = player.maxhealth
+        print("You sit by a campfire and regenerate 10 health")
+        option = input("-->")
+        menu()
+    elif healchance == 5 or 6 or 7:
+        player.health += 25
+        if player.health >= player.maxhealth:
+            player.health = player.maxhealth
+        print("You sit by a roaring campfire and regenerate 25 health")
+        option = input("-->")
+        menu()
+    elif healchance == 8 or 9:
+        player.health += 50
+        if player.health >= player.maxhealth:
+            player.health = player.maxhealth
+        print("You sit by a magical campfire and regenerate 50 health")
+        option = input("-->")
+        menu()
+    else:
+        player.maxhealth += 25
+        player.health = player.maxhealth
+        print("The gods bless you and grant you 25 extra health, fully rejuvenating you")
+        option = input("-->")
+        menu()
 
 def enemypick():
     global enemy
@@ -178,6 +197,8 @@ def inventory():
             if option_2 in player.weapon:
                 player.currentweapon = player.weapon[player.weapon.index(option_2)]
                 print(f"You have equipped {player.currentweapon}")
+                option = input(' ')
+                os.system('cls')
                 menu()
             else: 
                 print("That is not a valid option")
@@ -252,13 +273,14 @@ def store():
         store()
 
 def menu():
+    os.system('cls')
     print(f"Name: {player.name}")  
-    print(f"Attack: {player.attack}") 
+    print(f"Attack: {player.attack}")
+    print(f"Health: {player.health}/{player.maxhealth}")
     print(f"Gold: {player.gold}") 
+    print(f"Potions: {player.potions}") 
     print(f"Weapons: {player.weapon}")  
     print(f"Equipped Weapon: {player.currentweapon}")
-    print(f"Potions: {player.potions}") 
-    print(f"Health: {player.health}/{player.maxhealth}")
     print("1.) Fight")
     print("2.) Store")
     print("3.) Inventory")
@@ -272,8 +294,7 @@ def menu():
     elif option == "3":
         inventory()
     elif option == "4":
-        inventory()
-        #placeholder for heal
+        heal()
     elif option == "5":
         sys.exit()
     else:
@@ -299,12 +320,6 @@ def main():
     else:
         print('Please pick a valid option')
         main()
-
-""" class Heal():
-     def heal():
-        option = input("-->")
-        menu() """
-
 
 
 main()
