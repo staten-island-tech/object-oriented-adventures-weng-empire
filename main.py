@@ -1,8 +1,4 @@
-import json, sys
-from fight import Enemypick
-from enemy import Player
-from store import Store
-from inventory import Inventory
+import json, sys, random
 
 
 def menu():
@@ -51,4 +47,8 @@ def main():
         print('Please pick a valid option')
         main()
 
+
+
+
+main()
 
