@@ -94,12 +94,11 @@ class Store():
     def store():
         print("Welcome to the Store!")
         print("\nWhat would you like to purchase? (Enter full name of item)\n")
-        print("1.) Katana (50 Gold) (attack = 7)")
-        print("2.) Dragon Slayer (200 Gold) (attack = 20)")
-        print("3.) Witch Staff (300 Gold) (attack = 25)") 
-        print("4.) AK-47 (500 Gold) (attack = 35)")
-        print("5.) Potion (10 Gold)")
-        print("6.) Back")
+        print("1.) Katana (50 Gold)")
+        print("2.) Dragon Slayer (200 Gold)")
+        print("3.) AK-47 (500 Gold)")
+        print("4.) Potion (10 Gold)")
+        print("5.) Back")
         option = input(' ')
         if option == "1":
             weapon = "Katana"
@@ -126,18 +125,6 @@ class Store():
                 option = input(' ')
                 Store.store()
         elif option == "3":
-            weapon = "Witch Staff"
-            if player.gold >= 300:
-                player.gold -= 300
-                player.weapon.append(weapon)
-                print(f"You have bought a Witch Staff")
-                option = input(' ')
-                Store.store()
-            else:
-                print("You don't have enough gold")
-                option = input(' ')
-                Store.store()
-        elif option == "4":
             weapon = "AK-47"
             if player.gold >= 500:
                 player.gold -= 500
@@ -149,7 +136,7 @@ class Store():
                 print("You don't have enough gold")
                 option = input(' ')
                 Store.store()
-        elif option == "5":
+        elif option == "4":
             if player.gold >= 10:
                 player.gold -= 10
                 player.potions += 1
@@ -160,7 +147,7 @@ class Store():
                 print("You don't have enough gold")
                 option = input(' ')
                 Store.store()
-        elif option == "6":
+        elif option == "5":
             Menu.menu()
         else:
             print("Please pick a valid option")
