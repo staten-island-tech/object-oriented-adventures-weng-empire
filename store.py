@@ -1,7 +1,7 @@
-from imports import player, menu
+import os 
+from menu import menu
 
-
-def store():
+def store(player):
     print("Welcome to the Store!\n")
     print("What would you like to purchase?\n")
     print("1.) Katana (50 Gold)")

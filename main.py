@@ -1,11 +1,51 @@
 import json, sys, random
-from heal import heal
-from store import store
+""" from store import store
 from inventory import inventory
-from fight import enemypick
-from enemy import Player
+from fight import enemypick """
+from menu import menu
 
-def menu():
+class Player():
+    def __init__(self, name):
+        self.name = name
+        self.maxhealth = 100
+        self.health = self.maxhealth
+        self.attack = 10
+        self.gold = 1000
+        self.potions = 2
+        self.weapon = ["Basic Sword"]
+        self.currentweapon = ["Basic Sword"]
+
+def heal():
+    healchance = random.randint(1,10)
+    if healchance == 1 or 2 or 3 or 4:
+        player.health += 10
+        if player.health >= player.maxhealth:
+            player.health = player.maxhealth
+        print("You sit by a campfire and regenerate 10 health")
+        option = input("-->")
+        menu()
+    elif healchance == 5 or 6 or 7:
+        player.health += 25
+        if player.health >= player.maxhealth:
+            player.health = player.maxhealth
+        print("You sit by a roaring campfire and regenerate 25 health")
+        option = input("-->")
+        menu()
+    elif healchance == 8 or 9:
+        player.health += 50
+        if player.health >= player.maxhealth:
+            player.health = player.maxhealth
+        print("You sit by a magical campfire and regenerate 50 health")
+        option = input("-->")
+        menu()
+    else:
+        player.maxhealth += 25
+        player.health = player.maxhealth
+        print("The gods bless you and grant you 25 extra health, fully rejuvenating you")
+        option = input("-->")
+        menu()
+
+""" def menu():
         print(f"Name: {player.name}")  
         print(f"Attack: {player.attack}") 
         print(f"Gold: {player.gold}") 
@@ -31,7 +71,7 @@ def menu():
         else:
             print("Please pick a valid option")
             menu()
-
+ """
 def main(): 
     print("Welcome!\n")
     print("1.) Start")
@@ -44,14 +84,11 @@ def main():
             global player
             player = Player(name)
             menu()
-        start()
     elif option == "2":
         sys.exit()
     else:
         print('Please pick a valid option')
         main()
-
-
 
 
 main()

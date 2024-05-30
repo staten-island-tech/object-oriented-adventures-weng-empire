@@ -1,7 +1,6 @@
-""" import json, sys, random, os
+import os 
 
-
-def menu():
+def menu(player):
     os.system('cls')
     print(f"Name: {player.name}")  
     print(f"Attack: {player.attack}")
@@ -29,5 +28,3 @@ def menu():
     else:
         print("Please pick a valid option")
         menu()
-
- """

@@ -1,4 +1,4 @@
-from imports import player, menu
+""" from imports import player, menu
 import random
 
 
@@ -30,4 +30,4 @@ def heal():
         player.health = player.maxhealth
         print("The gods bless you and grant you 25 extra health, fully rejuvenating you")
         option = input("-->")
-        menu()
+        menu() """

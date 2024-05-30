@@ -161,6 +161,7 @@ while fighting == "Y":
                 potion()
         elif option == "4":
             run()
+    fight()
     
                 
 def win():

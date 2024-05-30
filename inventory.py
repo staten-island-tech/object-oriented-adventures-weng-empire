@@ -1,7 +1,7 @@
-from imports import menu, player
+from menu import menu
 import os
 
-def inventory():
+def inventory(player):
     print("What do you want to do?")
     print("1.) Equip Weapon")
     print("2.) Go back")
