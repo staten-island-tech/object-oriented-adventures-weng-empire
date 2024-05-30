@@ -1,42 +1,28 @@
-from imports import Menu, player
+from imports import menu, player
+import os
 
-
-class Inventory():
-    def inventory():
-        print("What do you want to do?")
-        print("1.) Equip Weapon")
-        print("2.) Go back")
-        option = input("--> ")
-        if option == "1":
-            Equip.equip()
-        elif option == "2":
-            Menu.menu()
-        else:
-            print("Please pick a valid option")
-            Inventory.inventory
-
-class Equip():
-    def equip():
-        print(f"{player.weapon}")
-        print("What do you want to equip? (Write out full name of item)")
-        option = input("--> ").title()
-        if option == "Katana":
-            player.currentweapon = ["Katana"]
-            print(f"{option} Equipped")
-            option = input(' ')
-            Menu.menu()
-        elif option == "Dragon Slayer":
-            player.currentweapon = ["Dragon Slayer"]
-            print(f"{option} Equipped")
-            option = input(' ')
-            Menu.menu()
-        elif option == "AK-47":
-            player.currentweapon = ["AK-47"]
-            print(f"{option} Equipped")
-            option = input(' ')
-            Menu.menu()
-        elif option == "Basic Sword":
-            player.currentweapon = ["Basic Sword"]
-            print(f"{option} Equipped")
-            option = input(' ')
-            Menu.menu()
+def inventory():
+    print("What do you want to do?")
+    print("1.) Equip Weapon")
+    print("2.) Go back")
+    option = input("--> ")
+    if option == "1":
+        def equip():
+            print(f"{player.weapon}\n")
+            print("What do you want to equip? (Write out full name of item)\n")
+            option_2 = input("--> ").title()
+            if option_2 in player.weapon:
+                player.currentweapon = player.weapon[player.weapon.index(option_2)]
+                print(f"You have equipped {player.currentweapon}")
+                option = input(' ')
+                os.system('cls')
+                menu()
+            else: 
+                print("That is not a valid option")
+                equip()
+        equip()
+    elif option == "2":
+        menu()
+    else:
+        print("Please pick a valid option")
+        inventory()

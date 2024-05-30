@@ -1,5 +1,9 @@
 import json, sys, random
-
+from heal import heal
+from store import store
+from inventory import inventory
+from fight import enemypick
+from enemy import Player
 
 def menu():
         print(f"Name: {player.name}")  
@@ -15,13 +19,13 @@ def menu():
         print("5.) Exit")
         option = input("--> ")
         if option == "1":
-            Enemypick.enemypick()
+            enemypick()
         elif option == "2":
-            Store.store()
+            store()
         elif option == "3":
-            Inventory.inventory()
+            inventory()
         elif option == "4":
-            Heal.heal()
+            heal()
         elif option == "5":
             sys.exit()
         else:
