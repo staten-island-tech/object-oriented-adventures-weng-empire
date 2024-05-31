@@ -70,8 +70,8 @@ def heal():
             sys.exit()
         else:
             print("Please pick a valid option")
-            menu()
- """
+            menu() """
+
 def main(): 
     print("Welcome!\n")
     print("1.) Start")
@@ -84,6 +84,7 @@ def main():
             global player
             player = Player(name)
             menu()
+        start()
     elif option == "2":
         sys.exit()
     else:
