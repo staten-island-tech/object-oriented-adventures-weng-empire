@@ -15,7 +15,6 @@ def inventory(player):
                 player.currentweapon = player.weapon[player.weapon.index(option_2)]
                 print(f"You have equipped {player.currentweapon}")
                 option = input(' ')
-                os.system('cls')
                 menu()
             else: 
                 print("That is not a valid option")
