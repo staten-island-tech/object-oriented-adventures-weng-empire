@@ -1,14 +1,17 @@
-import os 
+import os, sys
+""" from store import store
+from inventory import inventory
+from fight import enemypick """
 
-def menu(player):
+def menu(user):
     os.system('cls')
-    print(f"Name: {player.name}")  
-    print(f"Attack: {player.attack}")
-    print(f"Health: {player.health}/{player.maxhealth}")
-    print(f"Gold: {player.gold}") 
-    print(f"Potions: {player.potions}") 
-    print(f"Weapons: {player.weapon}")  
-    print(f"Equipped Weapon: {player.currentweapon}")
+    print(f"Name: {user.name}")  
+    print(f"Attack: {user.attack}")
+    print(f"Health: {user.health}/{user.maxhealth}")
+    print(f"Gold: {user.gold}") 
+    print(f"Potions: {user.potions}") 
+    print(f"Weapons: {user.weapon}")  
+    print(f"Equipped Weapon: {user.currentweapon}")
     print("1.) Fight")
     print("2.) Store")
     print("3.) Inventory")

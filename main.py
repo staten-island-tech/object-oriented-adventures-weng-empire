@@ -1,8 +1,8 @@
 import json, sys, random
-""" from store import store
+from store import store
 from inventory import inventory
-from fight import enemypick """
-from menu import menu
+from fight import enemypick
+
 
 class Player():
     def __init__(self, name):
@@ -45,51 +45,47 @@ def heal():
         option = input("-->")
         menu()
 
-""" def menu():
-        print(f"Name: {player.name}")  
-        print(f"Attack: {player.attack}") 
-        print(f"Gold: {player.gold}") 
-        print(f"Current Weapons: {player.weapon}")  
-        print(f"Potions: {player.potions}") 
-        print(f"Health: {player.health}/{player.maxhealth}")
-        print("1.) Fight")
-        print("2.) Store")
-        print("3.) Inventory")
-        print("4.) Heal")
-        print("5.) Exit")
-        option = input("--> ")
-        if option == "1":
-            enemypick()
-        elif option == "2":
-            store()
-        elif option == "3":
-            inventory()
-        elif option == "4":
-            heal()
-        elif option == "5":
-            sys.exit()
-        else:
-            print("Please pick a valid option")
-            menu()
- """
+def menu():
+    print(f"Name: {player.name}")  
+    print(f"Attack: {player.attack}") 
+    print(f"Gold: {player.gold}") 
+    print(f"Current Weapons: {player.weapon}")  
+    print(f"Potions: {player.potions}") 
+    print(f"Health: {player.health}/{player.maxhealth}")
+    print("1.) Fight")
+    print("2.) Store")
+    print("3.) Inventory")
+    print("4.) Heal")
+    print("5.) Exit")
+    option = input("--> ")
+    if option == "1":
+        enemypick()
+    elif option == "2":
+        store()
+    elif option == "3":
+        inventory()
+    elif option == "4":
+        heal()
+    elif option == "5":
+        sys.exit()
+    else:
+        print("Please pick a valid option")
+        menu()
+
 def main(): 
     print("Welcome!\n")
     print("1.) Start")
     print("2.) Exit")
     option = input("--> ")
     if option == "1":
-        def start():
-            print("Hello, what is your name?")
-            name = input("--> ")
-            global player
-            player = Player(name)
-            menu()
+        print("Hello, what is your name?")
+        name2 = input("--> ")
+        global player
+        player = Player(name2)
+        menu()
     elif option == "2":
         sys.exit()
     else:
         print('Please pick a valid option')
         main()
-
-
 main()
-
