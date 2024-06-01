@@ -1,5 +1,4 @@
 import os 
-from menu import menu
 
 def store(player):
     print("Welcome to the Store!\n")
@@ -17,7 +16,7 @@ def store(player):
             player.weapon.append(weapon)
             print("You have bought a Katana")
             option = input(' ')
-            menu()
+            store()
         else:
             print("You don't have enough gold")
             option = input(' ')
@@ -29,7 +28,7 @@ def store(player):
             player.weapon.append(weapon)
             print("You have bought the Dragon Slayer")
             option = input(' ')
-            menu()
+            store()
         else:
             print("You don't have enough gold")
             option = input(' ')
@@ -40,8 +39,8 @@ def store(player):
             player.gold -= 500
             player.weapon.append(weapon)
             print("You have bought an Odachi")
-            option = input(' ')
-            menu()
+            option = input(' ')  
+            store()   
         else:
             print("You don't have enough gold")
             option = input(' ')
@@ -58,7 +57,7 @@ def store(player):
             option = input(' ')
             store()
     elif option == "5":
-        menu()
+        return input(" ")
     else:
         print("Please pick a valid option")
         store()

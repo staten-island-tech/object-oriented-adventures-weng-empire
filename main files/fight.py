@@ -1,17 +1,16 @@
 import sys, random, time, os
 from enemy import Goblin, Knight, Slime, Zombie
-from menu import menu
 
-def attackdamage(self):
-    attack = self.attack
-    if self.weapon == ["Basic Sword"]:
-        attack += 5
-    elif self.weapon == "Katana":
-        attack += 25
-    elif self.weapon == ["Dragon Slayer"]:
-        attack += 50
-    elif attack.weapon == "AK-47":
-        attack += 100
+def attackdamage(player):
+    if player.weapon == "Basic Sword":
+        player.attack += 5
+    elif player.weapon == "Katana":
+        player.attack += 25
+    elif player.weapon == "Dragon Slayer":
+        player.attack += 50
+    elif player.weapon == "Odachi":
+        player.attack += 100
+
 
 def enemypick():
     global enemy
@@ -24,9 +23,10 @@ def enemypick():
         enemy = Slime
     else:
         enemy = Zombie
-    Fight.fight() 
+    print(f"{enemy}")
+    """ Fight.fight() """ 
 
-pattack = random.randint(1,3)
+""" pattack = random.randint(1,3)
 eattack = random.randint(1,2)
 
 fighting = "Y"
@@ -55,7 +55,7 @@ class Fight():
         if runchance == '1':
             fighting != "Y"
             print("You successfully ran away")
-            menu()
+            return input(" ")
         else:
             print("You failed to get away!")
 
@@ -97,7 +97,7 @@ def win(player):
     player.gold += enemy.goldgain
     print(f"You have defeated the {enemy.name}") 
     print(f"You found {enemy.goldgain} gold!") 
-    menu()
+    return input(" ")
 
 def dead():
     print("You have died")
@@ -105,6 +105,6 @@ def dead():
     print("2.) Exit")
     option = input("--> ")
     if option == '1':
-        menu()
+        return input(" ")
     elif option == '2':
-        sys.exit
+        sys.exit """

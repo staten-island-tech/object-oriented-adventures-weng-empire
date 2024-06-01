@@ -1,5 +1,4 @@
-from menu import menu
-import os
+
 
 def inventory(player):
     print("What do you want to do?")
@@ -15,13 +14,12 @@ def inventory(player):
                 player.currentweapon = player.weapon[player.weapon.index(option_2)]
                 print(f"You have equipped {player.currentweapon}")
                 option = input(' ')
-                menu()
             else: 
                 print("That is not a valid option")
                 equip()
         equip()
     elif option == "2":
-        menu()
+        return input(" ")
     else:
         print("Please pick a valid option")
         inventory()

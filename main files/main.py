@@ -1,21 +1,21 @@
-import json, sys, random
+import json, sys, random, os
 from store import store
 from inventory import inventory
 from fight import enemypick
-
+from heal import heal
 
 class Player():
     def __init__(self, name):
         self.name = name
-        self.maxhealth = 100
-        self.health = self.maxhealth
+        self.maxhealth = 1000
+        self.health = 1
         self.attack = 10
         self.gold = 1000
         self.potions = 2
         self.weapon = ["Basic Sword"]
         self.currentweapon = ["Basic Sword"]
 
-def heal():
+""" def heal():
     healchance = random.randint(1,10)
     if healchance == 1 or 2 or 3 or 4:
         player.health += 10
@@ -43,9 +43,11 @@ def heal():
         player.health = player.maxhealth
         print("The gods bless you and grant you 25 extra health, fully rejuvenating you")
         option = input("-->")
-        menu()
+        menu() """
+
 
 def menu():
+    os.system('cls')
     print(f"Name: {player.name}")  
     print(f"Attack: {player.attack}") 
     print(f"Gold: {player.gold}") 
@@ -57,21 +59,23 @@ def menu():
     print("3.) Inventory")
     print("4.) Heal")
     print("5.) Exit")
-    option = input("--> ")
-    if option == "1":
-        enemypick()
-    elif option == "2":
-        store()
-    elif option == "3":
-        inventory()
-    elif option == "4":
-        heal()
-    elif option == "5":
-        sys.exit()
-    else:
-        print("Please pick a valid option")
-        menu()
-
+    gameloop = "Y"
+    while gameloop == "Y":
+        option = input("--> ")
+        if option == "1":
+            enemypick()
+        elif option == "2":
+            store(player)
+        elif option == "3":
+            inventory(player)
+        elif option == "4":
+            heal(player)
+        elif option == "5":
+            sys.exit()
+        else:
+            print("Please pick a valid option")
+            option = input(' ')
+    
 def main(): 
     print("Welcome!\n")
     print("1.) Start")
@@ -88,4 +92,6 @@ def main():
     else:
         print('Please pick a valid option')
         main()
+
+
 main()

@@ -1,7 +1,8 @@
 import os, sys
-""" from store import store
+from store import store
 from inventory import inventory
-from fight import enemypick """
+from fight import enemypick
+from heal import heal
 
 def menu(user):
     os.system('cls')
