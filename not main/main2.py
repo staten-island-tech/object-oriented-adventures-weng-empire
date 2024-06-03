@@ -12,6 +12,19 @@ class Player():
         self.weapon = ["Basic Sword"]
         self.currentweapon = ["Basic Sword"]
 
+""" class Enemy():
+    def __init__(self):
+        self.maxhealth = 100
+        self.health = self.maxhealth
+        self.attack = 7
+        self.goldgain = random.randint(5,15)
+
+class Goblin(Enemy):
+class Slime(Enemy):
+class Knight(Enemy):
+class Zombie(Enemy):
+class Mark(Enemy): """
+             
 class Goblin():
     def __init__(self):
         self.name = ["Goblin"]
@@ -162,7 +175,6 @@ while fighting == "Y":
         elif option == "4":
             run()
     fight()
-    
                 
 def win():
     player.gold += enemy.goldgain

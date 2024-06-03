@@ -1,12 +1,31 @@
-import json, sys, random
-""" from store import store
+import json, sys, random, os
+from store import store
 from inventory import inventory
-from fight import enemypick """
-from menu import menu
-from enemy import Player
+from fight import enemypick
+from heal import heal
 
+class Player():
+    def __init__(self, name):
+        self.name = name
+        self.maxhealth = 1000
+        self.health = 1
+        self.attack = 10
+        self.gold = 1000
+        self.potions = 2
+        self.weapon = ["Basic Sword"]
+        self.currentweapon = ["Basic Sword"]
 
-def heal():
+""" def attackdamage():
+    if player.weapon == "Basic Sword":
+        player.attack == 15
+    elif player.weapon == "Katana":
+        player.attack == 35
+    elif player.weapon == "Dragon Slayer":
+        player.attack += 75
+    elif player.weapon == "Odachi":e
+        player.attack += 150 """
+
+""" def heal():
     healchance = random.randint(1,10)
     if healchance == 1 or 2 or 3 or 4:
         player.health += 10
@@ -34,13 +53,17 @@ def heal():
         player.health = player.maxhealth
         print("The gods bless you and grant you 25 extra health, fully rejuvenating you")
         option = input("-->")
-        menu()
+        menu() """
 
-""" def menu():
+def menu():
+    gameloop = "Y"
+    while gameloop == "Y":
+        os.system('cls')
         print(f"Name: {player.name}")  
         print(f"Attack: {player.attack}") 
         print(f"Gold: {player.gold}") 
-        print(f"Current Weapons: {player.weapon}")  
+        print(f"Weapons: {player.weapon}")
+        print(f"Equipped Weapon: {player.currentweapon}")  
         print(f"Potions: {player.potions}") 
         print(f"Health: {player.health}/{player.maxhealth}")
         print("1.) Fight")
@@ -52,17 +75,17 @@ def heal():
         if option == "1":
             enemypick()
         elif option == "2":
-            store()
+            store(player)
         elif option == "3":
-            inventory()
+            inventory(player)
         elif option == "4":
-            heal()
+            heal(player)
         elif option == "5":
             sys.exit()
         else:
             print("Please pick a valid option")
-            menu()
- """
+            option = input(' ')
+    
 def main(): 
     print("Welcome!\n")
     print("1.) Start")
@@ -70,16 +93,17 @@ def main():
     option = input("--> ")
     if option == "1":
         print("Hello, what is your name?")
-        name = input("--> ")
+        name2 = input("--> ")
         global player
-        player = Player(name)
+        player = Player(name2)
         menu()
     elif option == "2":
         sys.exit()
     else:
         print('Please pick a valid option')
+        option = input(" ")
+        os.system('cls')
         main()
 
 
 main()
-
