@@ -15,6 +15,7 @@ class Player():
         self.weapon = ["Basic Sword"]
         self.currentweapon = ["Basic Sword"]
 
+
 def menu():
     gameloop = "Y"
     while gameloop == "Y":
