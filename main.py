@@ -3,17 +3,8 @@ import json, sys, random
 from inventory import inventory
 from fight import enemypick """
 from menu import menu
+from enemy import Player
 
-class Player():
-    def __init__(self, name):
-        self.name = name
-        self.maxhealth = 100
-        self.health = self.maxhealth
-        self.attack = 10
-        self.gold = 1000
-        self.potions = 2
-        self.weapon = ["Basic Sword"]
-        self.currentweapon = ["Basic Sword"]
 
 def heal():
     healchance = random.randint(1,10)
@@ -78,12 +69,11 @@ def main():
     print("2.) Exit")
     option = input("--> ")
     if option == "1":
-        def start():
-            print("Hello, what is your name?")
-            name = input("--> ")
-            global player
-            player = Player(name)
-            menu()
+        print("Hello, what is your name?")
+        name = input("--> ")
+        global player
+        player = Player(name)
+        menu()
     elif option == "2":
         sys.exit()
     else:
