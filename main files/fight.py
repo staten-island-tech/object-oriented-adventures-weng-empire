@@ -13,12 +13,13 @@ def enemypick():
     else:
         enemy = Zombie
     print(f"{enemy}")
-    """ Fight.fight() """ 
+    option = input(" ")
+    Fight.fight() 
 
-""" pattack = random.randint(1,3)
+pattack = random.randint(1,3)
 eattack = random.randint(1,2)
-
 fighting = "Y"
+
 class Fight():
     def hit(player):
         if pattack != 1:
@@ -47,6 +48,26 @@ class Fight():
             return input(" ")
         else:
             print("You failed to get away!")
+    
+    def potion(player):
+        if player.potions == 0:
+            print("You don't have any potions")
+        else:
+            player.health += 50
+            if player.health > player.maxhealth:
+                player.health = player.maxhealth
+            print("You drank a potion!")
+
+    def defend(player):
+        if eattack == 1:
+            print(f"The {enemy} missed!")
+        else: 
+            player.health -= enemy.attack/5
+            print(f"The {enemy} dealt {enemy.attack} damage!")
+            print(f"{player.health}/{player.maxhealth}HP")
+            if player.health <= 0:
+                fighting != "Y"
+                dead()
 
     while fighting == "Y":
         def fight(player):
@@ -59,26 +80,9 @@ class Fight():
             if option == "1":
                 Fight.dodge()
             elif option == "2":
-                eattack = random.randint(1,2)
-                if eattack == 1:
-                    print(f"The {enemy} missed!")
-                else: 
-                    player.health -= enemy.attack/5
-                    print(f"The {enemy} dealt {enemy.attack} damage!")
-                    print(f"{player.health}/{player.maxhealth}HP")
-                    if player.health <= 0:
-                        fighting != "Y"
-                        dead()
+                Fight.defend()
             elif option == "3":       
-                def potion():
-                    if player.potions == 0:
-                        print("You don't have any potions")
-                    else:
-                        player.health += 50
-                        if player.health > player.maxhealth:
-                            player.health = player.maxhealth
-                        print("You drank a potion!")
-                    potion()
+                Fight.potion()
             elif option == "4":
                 Fight.run()
 
@@ -96,4 +100,4 @@ def dead():
     if option == '1':
         return input(" ")
     elif option == '2':
-        sys.exit """
+        sys.exit

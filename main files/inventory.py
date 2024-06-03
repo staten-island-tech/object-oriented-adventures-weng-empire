@@ -10,14 +10,14 @@ def inventory(player):
             option_2 = input("--> ").title()
             if option_2 in player.weapon:
                 player.currentweapon = player.weapon[player.weapon.index(option_2)]
-                if player.weapon == "Basic Sword":
-                    player.attack == 15
-                elif player.weapon == "Katana":
-                    player.attack == 35
-                elif player.weapon == "Dragon Slayer":
-                    player.attack += 75
-                elif player.weapon == "Odachi":
-                    player.attack += 150
+                if player.currentweapon == "Basic Sword":
+                    player.attack = 15
+                elif player.currentweapon == "Katana":
+                    player.attack = 35
+                elif player.currentweapon == "Dragon Slayer":
+                    player.attack = 75
+                elif player.currentweapon == "Odachi":
+                    player.attack = 150
                 print(f"You have equipped {player.currentweapon}")
                 option = input(' ')
             else: 
