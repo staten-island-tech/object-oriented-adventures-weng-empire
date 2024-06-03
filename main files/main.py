@@ -15,6 +15,16 @@ class Player():
         self.weapon = ["Basic Sword"]
         self.currentweapon = ["Basic Sword"]
 
+""" def attackdamage():
+    if player.weapon == "Basic Sword":
+        player.attack == 15
+    elif player.weapon == "Katana":
+        player.attack == 35
+    elif player.weapon == "Dragon Slayer":
+        player.attack += 75
+    elif player.weapon == "Odachi":e
+        player.attack += 150 """
+
 """ def heal():
     healchance = random.randint(1,10)
     if healchance == 1 or 2 or 3 or 4:
@@ -45,22 +55,22 @@ class Player():
         option = input("-->")
         menu() """
 
-
 def menu():
-    os.system('cls')
-    print(f"Name: {player.name}")  
-    print(f"Attack: {player.attack}") 
-    print(f"Gold: {player.gold}") 
-    print(f"Current Weapons: {player.weapon}")  
-    print(f"Potions: {player.potions}") 
-    print(f"Health: {player.health}/{player.maxhealth}")
-    print("1.) Fight")
-    print("2.) Store")
-    print("3.) Inventory")
-    print("4.) Heal")
-    print("5.) Exit")
     gameloop = "Y"
     while gameloop == "Y":
+        os.system('cls')
+        print(f"Name: {player.name}")  
+        print(f"Attack: {player.attack}") 
+        print(f"Gold: {player.gold}") 
+        print(f"Weapons: {player.weapon}")
+        print(f"Equipped Weapon: {player.currentweapon}")  
+        print(f"Potions: {player.potions}") 
+        print(f"Health: {player.health}/{player.maxhealth}")
+        print("1.) Fight")
+        print("2.) Store")
+        print("3.) Inventory")
+        print("4.) Heal")
+        print("5.) Exit")
         option = input("--> ")
         if option == "1":
             enemypick()
@@ -91,6 +101,8 @@ def main():
         sys.exit()
     else:
         print('Please pick a valid option')
+        option = input(" ")
+        os.system('cls')
         main()
 
 

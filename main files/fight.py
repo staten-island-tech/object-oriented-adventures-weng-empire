@@ -1,17 +1,6 @@
 import sys, random, time, os
 from enemy import Goblin, Knight, Slime, Zombie
 
-def attackdamage(player):
-    if player.weapon == "Basic Sword":
-        player.attack += 5
-    elif player.weapon == "Katana":
-        player.attack += 25
-    elif player.weapon == "Dragon Slayer":
-        player.attack += 50
-    elif player.weapon == "Odachi":
-        player.attack += 100
-
-
 def enemypick():
     global enemy
     enemynum = random.randint(1, 4)

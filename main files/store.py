@@ -16,11 +16,11 @@ def store(player):
             player.weapon.append(weapon)
             print("You have bought a Katana")
             option = input(' ')
-            store()
+            return input(" ")
         else:
             print("You don't have enough gold")
             option = input(' ')
-            store()
+            store(player)
     elif option == "2":
         weapon = "Dragon Slayer"
         if player.gold >= 200:
@@ -28,11 +28,11 @@ def store(player):
             player.weapon.append(weapon)
             print("You have bought the Dragon Slayer")
             option = input(' ')
-            store()
+            return input(" ")
         else:
             print("You don't have enough gold")
             option = input(' ')
-            store()
+            store(player)
     elif option == "3":
         weapon = "Odachi"
         if player.gold >= 500:
@@ -40,24 +40,26 @@ def store(player):
             player.weapon.append(weapon)
             print("You have bought an Odachi")
             option = input(' ')  
-            store()   
+            return input(" ")  
         else:
             print("You don't have enough gold")
             option = input(' ')
-            store()
+            store(player)
     elif option == "4":
         if player.gold >= 10:
             player.gold -= 10
             player.potions += 1
             print(f"You have bought a potion")
             option = input(' ')
-            store()
+            store(player)
         else:
             print("You don't have enough gold")
             option = input(' ')
-            store()
+            store(player)
     elif option == "5":
         return input(" ")
     else:
         print("Please pick a valid option")
-        store()
+        option = input(" ")
+        os.system('cls')
+        store(player)
