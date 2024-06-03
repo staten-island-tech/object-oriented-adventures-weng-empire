@@ -55,6 +55,7 @@ class Player():
         option = input("-->")
         menu() """
 
+
 def menu():
     gameloop = "Y"
     while gameloop == "Y":
