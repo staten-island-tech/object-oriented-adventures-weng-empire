@@ -3,19 +3,19 @@ import random
 
 def heal(player):
     healchance = random.randint(1,10)
-    if healchance == 1 or 2 or 3 or 4:
+    if healchance in [1,2,3,4]:
         player.health += 10
         if player.health >= player.maxhealth:
             player.health = player.maxhealth
         print("You sit by a campfire and regenerate 10 health")
         return input(" ")
-    elif healchance == 5 or 6 or 7:
+    elif healchance in [5,6,7]:
         player.health += 25
         if player.health >= player.maxhealth:
             player.health = player.maxhealth
         print("You sit by a roaring campfire and regenerate 25 health")
         return input(" ")
-    elif healchance == 8 or 9:
+    elif healchance in [8,9]:
         player.health += 50
         if player.health >= player.maxhealth:
             player.health = player.maxhealth
