@@ -1,6 +1,7 @@
 import os 
 
 def store(player):
+    os.system('cls')
     print("Welcome to the Store!\n")
     print("What would you like to purchase?\n")
     print("1.) Katana (50 Gold)")
@@ -15,7 +16,6 @@ def store(player):
             player.gold -= 50
             player.weapon.append(weapon)
             print("You have bought a Katana")
-            option = input(' ')
             return input(" ")
         else:
             print("You don't have enough gold")
@@ -27,7 +27,6 @@ def store(player):
             player.gold -= 200
             player.weapon.append(weapon)
             print("You have bought the Dragon Slayer")
-            option = input(' ')
             return input(" ")
         else:
             print("You don't have enough gold")
@@ -38,8 +37,7 @@ def store(player):
         if player.gold >= 500:
             player.gold -= 500
             player.weapon.append(weapon)
-            print("You have bought an Odachi")
-            option = input(' ')  
+            print("You have bought an Odachi") 
             return input(" ")  
         else:
             print("You don't have enough gold")
@@ -50,6 +48,7 @@ def store(player):
             player.gold -= 10
             player.potions += 1
             print(f"You have bought a potion")
+            print(f"You have {player.potions} potions")
             option = input(' ')
             store(player)
         else:
@@ -57,9 +56,8 @@ def store(player):
             option = input(' ')
             store(player)
     elif option == "5":
-        return input(" ")
+        return
     else:
         print("Please pick a valid option")
         option = input(" ")
-        os.system('cls')
         store(player)

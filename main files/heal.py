@@ -7,22 +7,22 @@ def heal(player):
         player.health += 10
         if player.health >= player.maxhealth:
             player.health = player.maxhealth
-        print("You sit by a campfire and regenerate 10 health")
+        print("Mr. Whalen increases your HOS to 75; You regenerate 10 health")
         return input(" ")
     elif healchance in [5,6,7]:
         player.health += 25
         if player.health >= player.maxhealth:
             player.health = player.maxhealth
-        print("You sit by a roaring campfire and regenerate 25 health")
+        print("Mr. Whalen increases your HOS to 85; You regenerate 25 health")
         return input(" ")
     elif healchance in [8,9]:
         player.health += 50
         if player.health >= player.maxhealth:
             player.health = player.maxhealth
-        print("You sit by a magical campfire and regenerate 50 health")
+        print("Mr. Whalen increases your HOS to 95; You regenerate 50 health")
         return input(" ")
     else:
         player.maxhealth += 25
         player.health = player.maxhealth
-        print("The gods bless you and grant you 25 extra health, fully rejuvenating you")
+        print("Mr. Whalen increases your HOS to 100, granting you 25 extra health, fully rejuvenating you")
         return input(" ")

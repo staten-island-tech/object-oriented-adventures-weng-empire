@@ -6,7 +6,7 @@ def inventory(player):
     if option == "1":
         def equip(player):
             print(f"{player.weapon}\n")
-            print("What do you want to equip? (Write out full name of item)\n")
+            print("What do you want to equip? (Write out full name of item) (Type back to return)\n")
             option_2 = input("--> ").title()
             if option_2 in player.weapon:
                 player.currentweapon = player.weapon[player.weapon.index(option_2)]
@@ -20,12 +20,14 @@ def inventory(player):
                     player.attack = 150
                 print(f"You have equipped {player.currentweapon}")
                 option = input(' ')
+            elif option_2 == "Back":
+                return
             else: 
                 print("That is not a valid option")
                 equip(player)
         equip(player)
     elif option == "2":
-        return input(" ")
+        return
     else:
         print("Please pick a valid option")
         inventory(player)
