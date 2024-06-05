@@ -1,28 +1,27 @@
 import random
 
-class Player():
-    def __init__(self, name):
-        self.name = name
-        self.maxhealth = 100
-        self.health = self.maxhealth
-        self.attack = 10
-        self.gold = 1000
-        self.potions = 2
-        self.weapon = ["Basic Sword"]
-        self.currentweapon = ["Basic Sword"]
-
 """ class Enemy():
     def __init__(self):
         self.maxhealth = 100
         self.health = self.maxhealth
         self.attack = 7
-        self.goldgain = random.randint(5,15)
+        self.goldgain = random.randint(5,50)
 
 class Goblin(Enemy):
+    pass
+
 class Slime(Enemy):
+    pass
+
 class Knight(Enemy):
+    pass
+
 class Zombie(Enemy):
-class Mark(Enemy): """
+    pass
+
+class Mark(Enemy):
+    pass """
+
 
 class Goblin():
     def __init__(self):

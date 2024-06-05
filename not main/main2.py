@@ -199,11 +199,11 @@ def inventory():
     option = input("--> ")
     if option == "1":
         def equip():
-            print(f"{player.weapon}\n")
+            print(f"{player.weapons}\n")
             print("What do you want to equip? (Write out full name of item)\n")
             option_2 = input("--> ").title()
-            if option_2 in player.weapon:
-                player.currentweapon = player.weapon[player.weapon.index(option_2)]
+            if option_2 in player.weapons:
+                player.currentweapon = player.weapons[player.weapons.index(option_2)]
                 print(f"You have equipped {player.currentweapon}")
                 option = input(' ')
                 os.system('cls')
@@ -231,7 +231,7 @@ def store():
         weapon = "Katana"
         if player.gold >= 50:
             player.gold -= 50
-            player.weapon.append(weapon)
+            player.weapons.append(weapon)
             print("You have bought a Katana")
             option = input(' ')
             menu()
@@ -243,7 +243,7 @@ def store():
         weapon = "Dragon Slayer"
         if player.gold >= 200:
             player.gold -= 200
-            player.weapon.append(weapon)
+            player.weapons.append(weapon)
             print("You have bought the Dragon Slayer")
             option = input(' ')
             menu()
@@ -255,7 +255,7 @@ def store():
         weapon = "Odachi"
         if player.gold >= 500:
             player.gold -= 500
-            player.weapon.append(weapon)
+            player.weapons.append(weapon)
             print("You have bought an Odachi")
             option = input(' ')
             menu()
@@ -287,7 +287,7 @@ def menu():
     print(f"Health: {player.health}/{player.maxhealth}")
     print(f"Gold: {player.gold}") 
     print(f"Potions: {player.potions}") 
-    print(f"Weapons: {player.weapon}")  
+    print(f"Weapons: {player.weapons}")  
     print(f"Equipped Weapon: {player.currentweapon}")
     print("1.) Fight")
     print("2.) Store")

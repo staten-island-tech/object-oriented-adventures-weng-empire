@@ -8,7 +8,7 @@ def menu():
     print(f"Health: {player.health}/{player.maxhealth}")
     print(f"Gold: {player.gold}") 
     print(f"Potions: {player.potions}") 
-    print(f"Weapons: {player.weapon}")  
+    print(f"Weapons: {player.weapons}")  
     print(f"Equipped Weapon: {player.currentweapon}")
     print("1.) Fight")
     print("2.) Store")

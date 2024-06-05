@@ -5,11 +5,11 @@ def inventory(player):
     option = input("--> ")
     if option == "1":
         def equip(player):
-            print(f"{player.weapon}\n")
+            print(f"{player.weapons}\n")
             print("What do you want to equip? (Write out full name of item) (Type back to return)\n")
             option_2 = input("--> ").title()
-            if option_2 in player.weapon:
-                player.currentweapon = player.weapon[player.weapon.index(option_2)]
+            if option_2 in player.weapons:
+                player.currentweapon = player.weapons[player.weapons.index(option_2)]
                 if player.currentweapon == "Basic Sword":
                     player.attack = 15
                 elif player.currentweapon == "Katana":

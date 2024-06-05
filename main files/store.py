@@ -12,9 +12,13 @@ def store(player):
     option = input(' ')
     if option == "1":
         weapon = "Katana"
-        if player.gold >= 50:
+        if weapon in player.weapons:
+            print("You already have this weapon")
+            option = input(' ')
+            store(player)
+        elif player.gold >= 50:
             player.gold -= 50
-            player.weapon.append(weapon)
+            player.weapons.append(weapon)
             print("You have bought a Katana")
             return input(" ")
         else:
@@ -23,9 +27,13 @@ def store(player):
             store(player)
     elif option == "2":
         weapon = "Dragon Slayer"
-        if player.gold >= 200:
+        if weapon in player.weapons:
+            print("You already have this weapon")
+            option = input(' ')
+            store(player)
+        elif player.gold >= 200:
             player.gold -= 200
-            player.weapon.append(weapon)
+            player.weapons.append(weapon)
             print("You have bought the Dragon Slayer")
             return input(" ")
         else:
@@ -34,9 +42,13 @@ def store(player):
             store(player)
     elif option == "3":
         weapon = "Odachi"
-        if player.gold >= 500:
+        if weapon in player.weapons:
+            print("You already have this weapon")
+            option = input(' ')
+            store(player)
+        elif player.gold >= 500:
             player.gold -= 500
-            player.weapon.append(weapon)
+            player.weapons.append(weapon)
             print("You have bought an Odachi") 
             return input(" ")  
         else:
