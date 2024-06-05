@@ -1,7 +1,7 @@
 import sys, random, time, os
 from enemy import Goblin, Knight, Slime, Zombie
 
-def enemypick():
+def enemypick(player):
     global enemy
     enemynum = random.randint(1, 4)
     if enemynum == 1:
@@ -12,19 +12,19 @@ def enemypick():
         enemy = Slime
     else:
         enemy = Zombie
-    fight() 
+    fight(player) 
 
 pattack = random.randint(1,3)
 eattack = random.randint(1,2)
 fighting = "Y"
 
 
-""" def hit(player):
+def hit(player):
     if pattack != 1:
         enemy.health -= player.attack
         if enemy.health <= 0:
             fighting != "Y"
-            win()
+            win(player)
         else: 
             print(f"You hit the {enemy} dealing {player.attack} damage!")
     if eattack != 1:
@@ -40,7 +40,7 @@ def dodge():
 
 def run():
     runchance = random.randint(1, 2)
-    if runchance == '1':
+    if runchance == 1:
         fighting != "Y"
         print("You successfully ran away")
         return
@@ -67,9 +67,10 @@ def defend(player):
             fighting != "Y"
             dead()
 
-while fighting == "Y":
-    def fight(player):
-        print(f"You come across a {enemy}!")
+def fight(player):
+    print(f"You come across a {enemy}!")
+    while fighting == "Y":
+        print(f"Enemy: {enemy.health}/{enemy.maxhealth} | {player}: {player.health}/{player.maxhealth}")
         print("1.) Attack")
         print("2.) Defend")
         print("3.) Potion")
@@ -85,7 +86,7 @@ while fighting == "Y":
                     enemy.health -= player.attack
                     if enemy.health <= 0:
                         fighting != "Y"
-                        win()
+                        win(player)
                     else: 
                         print(f"You hit the {enemy} dealing {player.attack} damage!")
                 if eattack != 1:
@@ -116,7 +117,6 @@ while fighting == "Y":
                 return
             else:
                 print("You failed to get away!")
-
 def win(player):
     player.gold += enemy.goldgain
     print(f"You have defeated the {enemy.name}") 
@@ -132,4 +132,3 @@ def dead():
         return
     elif option == '2':
         sys.exit
- """

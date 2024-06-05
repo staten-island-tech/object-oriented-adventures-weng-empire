@@ -33,7 +33,7 @@ class Menu():
             print("5.) Exit")
             option = input("--> ")
             if option == "1":
-                enemypick()
+                enemypick(player)
             elif option == "2":
                 store(player)
             elif option == "3":
