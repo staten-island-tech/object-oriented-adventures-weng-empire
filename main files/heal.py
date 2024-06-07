@@ -7,7 +7,7 @@ def heal(player):
         player.health += 10
         if player.health >= player.maxhealth:
             player.health = player.maxhealth
-        print("You get 100 on your test, regenerate 10 health")
+        print("You have a substitute for Russian, regenerate 10 health")
         return input(" ")
     elif healchance in [5,6,7]:
         player.health += 25

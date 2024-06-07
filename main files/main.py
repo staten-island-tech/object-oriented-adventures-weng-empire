@@ -44,8 +44,7 @@ class Menu():
             elif option == "5":
                 sys.exit()
             else:
-                print("Please pick a valid option")
-                option = input(' ')
+                print(" ")
         
 def main(): 
     print("Welcome!\n")
