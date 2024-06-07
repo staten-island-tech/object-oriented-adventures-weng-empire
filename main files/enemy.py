@@ -1,29 +1,37 @@
 import random
 
-""" class Enemy():
-    def __init__(self):
-        self.maxhealth = 100
+class Enemy():
+    def __init__(self, name, maxhealth, health, attack, goldgain):
+        self.name = name
+        self.maxhealth = maxhealth
         self.health = self.maxhealth
-        self.attack = 7
-        self.goldgain = random.randint(5,50)
+        self.attack = attack
+        self.goldgain = goldgain
 
 class Goblin(Enemy):
-    pass
+    def __init__(self, name, maxhealth, health, attack, goldgain):
+        super().__init__(name, maxhealth, health, attack, goldgain)
 
 class Slime(Enemy):
-    pass
+    def __init__(self, name, maxhealth, health, attack, goldgain):
+        super().__init__(name, maxhealth, health, attack, goldgain)
 
 class Knight(Enemy):
-    pass
+    def __init__(self, name, maxhealth, health, attack, goldgain):
+        super().__init__(name, maxhealth, health, attack, goldgain)
 
 class Zombie(Enemy):
-    pass
+    def __init__(self, name, maxhealth, health, attack, goldgain):
+        super().__init__(name, maxhealth, health, attack, goldgain)
 
 class Mark(Enemy):
-    pass """
+    def __init__(self, name, maxhealth, health, attack, goldgain):
+        super().__init__(name, maxhealth, health, attack, goldgain)
 
 
-class Goblin():
+
+
+""" class Goblin():
     def __init__(self):
         self.name = ["Goblin"]
         self.maxhealth = 80
@@ -62,4 +70,4 @@ class Mark():
         self.maxhealth = 200000
         self.health = self.maxhealth
         self.attack = 0.05
-        self.goldgain = 0.000000000000001
+        self.goldgain = 0.000000000000001 """

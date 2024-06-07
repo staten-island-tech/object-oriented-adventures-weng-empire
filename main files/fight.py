@@ -1,47 +1,57 @@
-import sys, random, time, os
+import sys, random, os
 from enemy import Goblin, Knight, Slime, Zombie
 
+
+
 def enemypick(player):
-    global enemy
+    global enemy, fighting
+    fighting = True
     enemynum = random.randint(1, 4)
     if enemynum == 1:
-        enemy = Goblin
+        enemy = Goblin("Goblin", 80, 80, 5, random.randint(5,15))
     elif enemynum == 2:
-        enemy = Knight
+        enemy = Knight("Knight", 120, 140, 10, random.randint(25,50))
     elif enemynum == 3:
-        enemy = Slime
+        enemy = Slime("Slime", 50, 80, 4, random.randint(1,10))
     else:
-        enemy = Zombie
-    fight(player) 
+        enemy = Zombie("Zombie", 100, 80, 7, random.randint(10,25))
+    fight(player)
+  
+def enemyhit(player):
+    eattack = random.randint(1,3)
+    if eattack != 1:
+        player.health -= enemy.attack
+        if player.health <= 0:
+            global fighting
+            fighting = False
+            dead(player)
+        else:
+            print(f"The {enemy.name} hit you dealing {enemy.attack} damage!")
+            option = input(" ")
+    else: 
+        print(f"The {enemy.name} missed!")
+        option = input(" ")
 
-pattack = random.randint(1,3)
-eattack = random.randint(1,2)
-fighting = "Y"
-
-
-def hit(player):
+def playerhit(player):
+    pattack = random.randint(1,4)
     if pattack != 1:
         enemy.health -= player.attack
         if enemy.health <= 0:
-            fighting != "Y"
+            global fighting
+            fighting = False
             win(player)
         else: 
-            print(f"You hit the {enemy} dealing {player.attack} damage!")
-    if eattack != 1:
-        print(f"The {enemy} hit you dealing {enemy.attack} damage!")
-
-def dodge():
-    if pattack == 1:
-        print("You missed!")
-    if eattack == 1:
-        print(f"The {enemy} missed!")
+            print(f"You hit the {enemy.name} dealing {player.attack} damage!")
+            enemyhit(player)
     else:
-        hit()
+        print("You missed!")
+        enemyhit(player)
 
 def run():
     runchance = random.randint(1, 2)
     if runchance == 1:
-        fighting != "Y"
+        global fighting
+        fighting = False
         print("You successfully ran away")
         return
     else:
@@ -56,74 +66,33 @@ def potion(player):
             player.health = player.maxhealth
         print("You drank a potion!")
 
-def defend(player):
-    if eattack == 1:
-        print(f"The {enemy} missed!")
-    else: 
-        player.health -= enemy.attack/5
-        print(f"The {enemy} dealt {enemy.attack} damage!")
-        print(f"{player.health}/{player.maxhealth}HP")
-        if player.health <= 0:
-            fighting != "Y"
-            dead()
-
 def fight(player):
-    print(f"You come across a {enemy}!")
-    while fighting == "Y":
-        print(f"Enemy: {enemy.health}/{enemy.maxhealth} | {player}: {player.health}/{player.maxhealth}")
+    print(f"You come across a {enemy.name}!")
+    while fighting:
+        os.system('cls')
+        print(f"{enemy.name}: {enemy.health}/{enemy.maxhealth} | {player.name}: {player.health}/{player.maxhealth}")
         print("1.) Attack")
-        print("2.) Defend")
-        print("3.) Potion")
-        print("4.) Run")
+        print("2.) Potion")
+        print("3.) Run")
         option = input("--> ")
         if option == "1":
-            if pattack == 1:
-                print("You missed!")
-            if eattack == 1:
-                print(f"The {enemy} missed!")
-            else:
-                if pattack != 1:
-                    enemy.health -= player.attack
-                    if enemy.health <= 0:
-                        fighting != "Y"
-                        win(player)
-                    else: 
-                        print(f"You hit the {enemy} dealing {player.attack} damage!")
-                if eattack != 1:
-                    print(f"The {enemy} hit you dealing {enemy.attack} damage!")
-        elif option == "2":
-            if eattack == 1:
-                print(f"The {enemy} missed!")
-            else: 
-                player.health -= enemy.attack/5
-                print(f"The {enemy} dealt {enemy.attack} damage!")
-                print(f"{player.health}/{player.maxhealth}HP")
-                if player.health <= 0:
-                    fighting != "Y"
-                    dead()
-        elif option == "3":       
-            if player.potions == 0:
-                print("You don't have any potions")
-            else:
-                player.health += 50
-                if player.health > player.maxhealth:
-                    player.health = player.maxhealth
-                print("You drank a potion!")
-        elif option == "4":
-            runchance = random.randint(1, 2)
-            if runchance == '1':
-                fighting != "Y"
-                print("You successfully ran away")
-                return
-            else:
-                print("You failed to get away!")
+            playerhit(player)
+        elif option == "2":       
+            potion(player)
+        elif option == "3":
+            run()
+        else:
+            print("Please pick a valid option")
+            fight(player)
+
 def win(player):
     player.gold += enemy.goldgain
     print(f"You have defeated the {enemy.name}") 
     print(f"You found {enemy.goldgain} gold!") 
-    return
+    return input(" ")
 
-def dead():
+def dead(player):
+    player.health = player.maxhealth
     print("You have died")
     print("1.) Return")
     print("2.) Exit")
@@ -132,3 +101,4 @@ def dead():
         return
     elif option == '2':
         sys.exit
+

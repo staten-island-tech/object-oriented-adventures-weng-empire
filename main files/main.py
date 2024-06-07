@@ -3,18 +3,18 @@ from store import store
 from inventory import inventory
 from fight import enemypick
 from heal import heal
-from enemy import Zombie, Goblin, Knight, Slime
 
 class Player():
     def __init__(self, name):
         self.name = name
-        self.maxhealth = 1000
-        self.health = 1
+        self.maxhealth = 100
+        self.health = self.maxhealth
         self.attack = 10
-        self.gold = 1000
+        self.gold = 0
         self.potions = 2
         self.weapons = ["Basic Sword"]
         self.currentweapon = ["Basic Sword"]
+
 class Menu():
     def menu():
         gameloop = "Y"
@@ -34,7 +34,7 @@ class Menu():
             print("5.) Exit")
             option = input("--> ")
             if option == "1":
-                enemypick(player, Zombie, Goblin, Knight, Slime)
+                enemypick(player)
             elif option == "2":
                 store(player)
             elif option == "3":
