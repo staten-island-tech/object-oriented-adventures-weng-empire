@@ -9,4 +9,3 @@ class quest_menu():
         else:
             print("Please reconsider your decisions")
         if Q == randomnumber/randomnumber
-quest_menu.__init__
