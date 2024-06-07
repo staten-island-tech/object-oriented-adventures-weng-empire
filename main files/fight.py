@@ -10,7 +10,7 @@ def enemypick(player):
     if enemynum == 1:
         enemy = Goblin("Goblin", 80, 80, 5, random.randint(5,15))
     elif enemynum == 2:
-        enemy = Knight("Knight", 120, 140, 10, random.randint(25,50))
+        enemy = Knight("Knight", 120, 140, 9, random.randint(25,50))
     elif enemynum == 3:
         enemy = Slime("Slime", 50, 80, 4, random.randint(1,10))
     else:

@@ -4,10 +4,10 @@ def store(player):
     os.system('cls')
     print("Welcome to the Store!\n")
     print("What would you like to purchase?\n")
-    print("1.) Katana (50 Gold)")
-    print("2.) Dragon Slayer (200 Gold)")
-    print("3.) Odachi (500 Gold)")
-    print("4.) Potion (10 Gold)")
+    print("1.) Katana (30 Gold)")
+    print("2.) Dragon Slayer (100 Gold)")
+    print("3.) Odachi (250 Gold)")
+    print("4.) Potion (5 Gold)")
     print("5.) Back")
     option = input(' ')
     if option == "1":
@@ -16,8 +16,8 @@ def store(player):
             print("You already have this weapon")
             option = input(' ')
             store(player)
-        elif player.gold >= 50:
-            player.gold -= 50
+        elif player.gold >= 30:
+            player.gold -= 30
             player.weapons.append(weapon)
             print("You have bought a Katana")
             return input(" ")
@@ -31,8 +31,8 @@ def store(player):
             print("You already have this weapon")
             option = input(' ')
             store(player)
-        elif player.gold >= 200:
-            player.gold -= 200
+        elif player.gold >= 100:
+            player.gold -= 100
             player.weapons.append(weapon)
             print("You have bought the Dragon Slayer")
             return input(" ")
@@ -46,8 +46,8 @@ def store(player):
             print("You already have this weapon")
             option = input(' ')
             store(player)
-        elif player.gold >= 500:
-            player.gold -= 500
+        elif player.gold >= 250:
+            player.gold -= 250
             player.weapons.append(weapon)
             print("You have bought an Odachi") 
             return input(" ")  
@@ -56,8 +56,8 @@ def store(player):
             option = input(' ')
             store(player)
     elif option == "4":
-        if player.gold >= 10:
-            player.gold -= 10
+        if player.gold >= 5:
+            player.gold -= 5
             player.potions += 1
             print(f"You have bought a potion")
             print(f"You have {player.potions} potions")
