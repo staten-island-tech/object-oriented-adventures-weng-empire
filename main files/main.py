@@ -1,8 +1,8 @@
 import json, sys, random, os
-from store import store
-from inventory import inventory
+from store import Store
+from inventory import Inventory
 from fight import enemypick
-from heal import heal
+from heal import Heal
 
 class Player():
     def __init__(self, name):
@@ -11,7 +11,7 @@ class Player():
         self.health = self.maxhealth
         self.attack = 10
         self.gold = 0
-        self.potions = 2
+        self.potions = 3
         self.weapons = ["Basic Sword"]
         self.currentweapon = ["Basic Sword"]
 
@@ -36,11 +36,11 @@ class Menu():
             if option == "1":
                 enemypick(player)
             elif option == "2":
-                store(player)
+                Store.store(player)
             elif option == "3":
-                inventory(player)
+                Inventory.inventory(player)
             elif option == "4":
-                heal(player)
+                Heal.heal(player)
             elif option == "5":
                 sys.exit()
             else:

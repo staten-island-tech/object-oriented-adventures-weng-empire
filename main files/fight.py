@@ -1,5 +1,5 @@
 import sys, random, os
-from enemy import Goblin, Knight, Slime, Zombie
+from enemy import Goblin, Knight, Slime, Zombie, Mark
 
 
 
@@ -13,6 +13,8 @@ def enemypick(player):
         enemy = Knight("Knight", 120, 140, 9, random.randint(25,50))
     elif enemynum == 3:
         enemy = Slime("Slime", 50, 80, 4, random.randint(1,10))
+    elif enemynum == 4:
+        enemy = Mark("Mark", 1000000000, 1000000000, 0.000000001, random.randint(1,1000000000))
     else:
         enemy = Zombie("Zombie", 100, 80, 7, random.randint(10,25))
     fight(player)
@@ -53,9 +55,10 @@ def run():
         global fighting
         fighting = False
         print("You successfully ran away")
-        return
+        return input(" ")
     else:
         print("You failed to get away!")
+        option = input(" ")
 
 def potion(player):
     if player.potions == 0:
@@ -82,7 +85,6 @@ def fight(player):
         elif option == "3":
             run()
         else:
-            print("Please pick a valid option")
             fight(player)
 
 def win(player):
