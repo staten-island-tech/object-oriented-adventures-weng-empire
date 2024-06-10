@@ -3,6 +3,7 @@ from store import Store
 from inventory import Inventory
 from fight import enemypick
 from heal import Heal
+from quest import Quest
 
 class Player():
     def __init__(self, name):
@@ -14,6 +15,10 @@ class Player():
         self.potions = 3
         self.weapons = ["Basic Sword"]
         self.currentweapon = ["Basic Sword"]
+        self.quest = False
+        self.mobkills = 0
+        self.questcompletes = 0 
+        self.storepurchase = False
 
 class Menu():
     def menu():
@@ -27,11 +32,13 @@ class Menu():
             print(f"Equipped Weapon: {player.currentweapon}")  
             print(f"Potions: {player.potions}") 
             print(f"Health: {player.health}/{player.maxhealth}")
+            print(f"Enemy Kills: {player.mobkills}")
             print("1.) Fight")
             print("2.) Store")
             print("3.) Inventory")
-            print("4.) Heal")
-            print("5.) Exit")
+            print("4.) Quest")
+            print("5.) Heal")
+            print("6.) Exit")
             option = input("--> ")
             if option == "1":
                 enemypick(player)
@@ -40,9 +47,17 @@ class Menu():
             elif option == "3":
                 Inventory.inventory(player)
             elif option == "4":
-                Heal.heal(player)
+                Quest.quest(player)
             elif option == "5":
+                Heal.heal(player)
+            elif option == "6":
                 sys.exit()
+            elif option == "as nodt":
+                player.gold += 100000
+            elif option == "tatar foras":
+                player.maxhealth += 999900
+                player.health = player.maxhealth
+                player.attack += 99999990
             else:
                 print(" ")
         
