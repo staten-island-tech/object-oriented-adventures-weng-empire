@@ -9,7 +9,7 @@ class Store():
         print("1.) Katana (30 Gold)")
         print("2.) Dragon Slayer (100 Gold)")
         print("3.) Odachi (250 Gold)")
-        print("4. Antithesis (1000 Gold) (Requires 5 quest compeletions)")
+        print("4.) Antithesis (1000 Gold) (Requires 5 quest compeletions)")
         print("5.) Potion (5 Gold)")
         print("6.) Back")
         option = input(' ')
