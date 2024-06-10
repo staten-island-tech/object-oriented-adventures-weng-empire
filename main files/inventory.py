@@ -22,6 +22,9 @@ class Inventory():
                         player.attack = 60
                     elif player.currentweapon == "Odachi":
                         player.attack = 120
+                    else:
+                        player.currentweapon == "Antithesis"
+                        player.attack = 500
                     print(f"You have equipped {player.currentweapon}")
                     option = input(' ')
                 elif option_2 == "Back":
