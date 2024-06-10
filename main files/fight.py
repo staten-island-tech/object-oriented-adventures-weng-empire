@@ -1,8 +1,6 @@
 import sys, random, os
 from enemy import Goblin, Knight, Slime, Zombie, Mark
 
-
-
 def enemypick(player):
     global enemy, fighting
     fighting = True
@@ -49,7 +47,7 @@ def playerhit(player):
         print("You missed!")
         enemyhit(player)
 
-def run():
+def run(player):
     runchance = random.randint(1, 2)
     if runchance == 1:
         global fighting
@@ -58,7 +56,7 @@ def run():
         return input(" ")
     else:
         print("You failed to get away!")
-        option = input(" ")
+        enemyhit(player)
 
 def potion(player):
     if player.potions == 0:
@@ -68,6 +66,9 @@ def potion(player):
         if player.health > player.maxhealth:
             player.health = player.maxhealth
         print("You drank a potion!")
+
+
+
 
 def fight(player):
     print(f"You come across a {enemy.name}!")
@@ -83,12 +84,13 @@ def fight(player):
         elif option == "2":       
             potion(player)
         elif option == "3":
-            run()
+            run(player)
         else:
             fight(player)
 
 def win(player):
     player.gold += enemy.goldgain
+    player.mobkills += 1 
     print(f"You have defeated the {enemy.name}") 
     print(f"You found {enemy.goldgain} gold!") 
     return input(" ")
