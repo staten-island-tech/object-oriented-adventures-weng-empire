@@ -1,17 +1,37 @@
 import random
 
-class Player():
-    def __init__(self, name):
+class Enemy():
+    def __init__(self, name, maxhealth, health, attack, goldgain):
         self.name = name
-        self.maxhealth = 100
+        self.maxhealth = maxhealth
         self.health = self.maxhealth
-        self.attack = 10
-        self.gold = 1000
-        self.potions = 2
-        self.weapon = ["Basic Sword"]
-        self.currentweapon = ["Basic Sword"]
+        self.attack = attack
+        self.goldgain = goldgain
 
-class Goblin():
+class Goblin(Enemy):
+    def __init__(self, name, maxhealth, health, attack, goldgain):
+        super().__init__(name, maxhealth, health, attack, goldgain)
+
+class Slime(Enemy):
+    def __init__(self, name, maxhealth, health, attack, goldgain):
+        super().__init__(name, maxhealth, health, attack, goldgain)
+
+class Knight(Enemy):
+    def __init__(self, name, maxhealth, health, attack, goldgain):
+        super().__init__(name, maxhealth, health, attack, goldgain)
+
+class Zombie(Enemy):
+    def __init__(self, name, maxhealth, health, attack, goldgain):
+        super().__init__(name, maxhealth, health, attack, goldgain)
+
+class Mark(Enemy):
+    def __init__(self, name, maxhealth, health, attack, goldgain):
+        super().__init__(name, maxhealth, health, attack, goldgain)
+
+
+
+
+""" class Goblin():
     def __init__(self):
         self.name = ["Goblin"]
         self.maxhealth = 80
@@ -50,4 +70,4 @@ class Mark():
         self.maxhealth = 200000
         self.health = self.maxhealth
         self.attack = 0.05
-        self.goldgain = 0.000000000000001
+        self.goldgain = 0.000000000000001 """
