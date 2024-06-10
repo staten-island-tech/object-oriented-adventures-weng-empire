@@ -1,6 +1,8 @@
 import sys, random, os
 from enemy import Goblin, Knight, Slime, Zombie, Mark, True_Mark
 
+
+
 def enemypick(player):
     global enemy, fighting
     fighting = True
@@ -111,7 +113,6 @@ def markwin(player):
 
 def win(player):
     player.gold += enemy.goldgain
-    player.mobkills += 1 
     print(f"You have defeated the {enemy.name}") 
     print(f"You found {enemy.goldgain} gold!") 
     return input(" ")
