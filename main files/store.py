@@ -9,7 +9,7 @@ class Store():
         print("1.) Katana (30 Gold)")
         print("2.) Dragon Slayer (100 Gold)")
         print("3.) Odachi (250 Gold)")
-        print("4. Antithesis (1000 Gold) (Requires 5 quest compeletions)")
+        print("4.) Antithesis (1000 Gold) (Requires 25 Mob kills)")
         print("5.) Potion (5 Gold)")
         print("6.) Back")
         option = input(' ')
@@ -62,7 +62,7 @@ class Store():
                 option = input(' ')
                 Store.store(player)
         elif option == "4":
-            if player.questcompletes >= 5:
+            if player.mobkills >= 25:
                 weapon = "Antithesis"
                 if weapon in player.weapons:
                     print("You already have this weapon")
@@ -73,9 +73,13 @@ class Store():
                     player.weapons.append(weapon)
                     print("You have bought the Antithesis") 
                     player.storepurchase = True
-                    return input(" ")  
+                    return input(" ")
+                else:
+                    print("You don't have enough gold")
+                    option = input(' ')
+                    Store.store(player)  
             else:
-                print("You don't have enough gold")
+                print("You don't have enough Mob Kills")
                 option = input(' ')
                 Store.store(player)
         elif option == "5":

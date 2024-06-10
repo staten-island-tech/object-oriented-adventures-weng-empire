@@ -30,7 +30,6 @@ class Inventory():
                 elif option_2 == "Back":
                     return
                 else: 
-                    print("That is not a valid option")
                     equip(player)
             equip(player)
         elif option == "2":

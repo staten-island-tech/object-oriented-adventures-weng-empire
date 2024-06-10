@@ -28,6 +28,9 @@ class Mark(Enemy):
     def __init__(self, name, maxhealth, health, attack, goldgain):
         super().__init__(name, maxhealth, health, attack, goldgain)
 
+class True_Mark(Enemy):
+    def __init__(self, name, maxhealth, health, attack, goldgain):
+        super().__init__(name, maxhealth, health, attack, goldgain)
 
 
 
