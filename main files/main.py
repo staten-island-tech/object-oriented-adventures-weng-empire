@@ -36,9 +36,9 @@ class Menu():
             print("1.) Fight")
             print("2.) Store")
             print("3.) Inventory")
-            print("4.) Quest")
-            print("5.) Heal")
-            print("6.) Exit")
+           #print("4.) Quest")
+            print("4.) Heal")
+            print("5.) Exit")
             option = input("--> ")
             if option == "1":
                 enemypick(player)
@@ -46,11 +46,11 @@ class Menu():
                 Store.store(player)
             elif option == "3":
                 Inventory.inventory(player)
+           # elif option == "4":
+            #    Quest.quest(player)
             elif option == "4":
-                Quest.quest(player)
-            elif option == "5":
                 Heal.heal(player)
-            elif option == "6":
+            elif option == "5":
                 sys.exit()
             elif option == "as nodt":
                 player.gold += 100000

@@ -1,6 +1,8 @@
 import sys, random, os
 from enemy import Goblin, Knight, Slime, Zombie, Mark
 
+
+
 def enemypick(player):
     global enemy, fighting
     fighting = True
@@ -66,9 +68,7 @@ def potion(player):
         if player.health > player.maxhealth:
             player.health = player.maxhealth
         print("You drank a potion!")
-
-
-
+        option = input(" ")
 
 def fight(player):
     print(f"You come across a {enemy.name}!")
@@ -90,7 +90,6 @@ def fight(player):
 
 def win(player):
     player.gold += enemy.goldgain
-    player.mobkills += 1 
     print(f"You have defeated the {enemy.name}") 
     print(f"You found {enemy.goldgain} gold!") 
     return input(" ")
