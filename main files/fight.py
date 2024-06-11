@@ -128,3 +128,4 @@ def dead(player):
     elif option == '2':
         sys.exit
 
+
