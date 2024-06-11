@@ -10,13 +10,13 @@ class Player():
         self.name = name
         self.maxhealth = 100
         self.health = self.maxhealth
-        self.attack = 10
+        self.attack = 5
         self.gold = 0
         self.potions = 3
         self.weapons = ["Basic Sword"]
-        self.currentweapon = ["Basic Sword"]
+        self.currentweapon = ["None"]
         self.mobkills = 0
-        self.questcompletes = 0 
+        self.questcompletes = 0
         self.storepurchase = False
 
 class Menu():
@@ -32,13 +32,14 @@ class Menu():
             print(f"Potions: {player.potions}") 
             print(f"Health: {player.health}/{player.maxhealth}")
             print(f"Mob Kills: {player.mobkills}")
+            print(f"Quest Completions: {player.questcompletes}")
             print("1.) Fight")
             print("2.) Store")
             print("3.) Inventory")
             print("4.) Quest")
-            print("4.) Heal")
-            print("5.) Exit")
-            option = input("--> ")
+            print("5.) Heal")
+            print("6.) Exit")
+            option = input("--> ").title()
             if option == "1":
                 enemypick(player)
             elif option == "2":
@@ -47,13 +48,13 @@ class Menu():
                 Inventory.inventory(player)
             elif option == "4":
                 Quest.quest(player)
-            elif option == "4":
-                Heal.heal(player)
             elif option == "5":
+                Heal.heal(player)
+            elif option == "6":
                 sys.exit()
-            elif option == "as nodt":
+            elif option == "As Nodt":
                 player.gold += 10000000000
-            elif option == "tatar foras":
+            elif option == "Tatar Foras":
                 player.maxhealth += 99999999999900
                 player.health = player.maxhealth
                 player.attack += 9999999999990
