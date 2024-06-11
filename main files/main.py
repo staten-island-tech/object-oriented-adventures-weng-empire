@@ -15,10 +15,9 @@ class Player():
         self.potions = 3
         self.weapons = ["Basic Sword"]
         self.currentweapon = ["Basic Sword"]
-        #self.quest = False
         self.mobkills = 0
-        #self.questcompletes = 0 
-        #self.storepurchase = False
+        self.questcompletes = 0 
+        self.storepurchase = False
 
 class Menu():
     def menu():
@@ -36,7 +35,7 @@ class Menu():
             print("1.) Fight")
             print("2.) Store")
             print("3.) Inventory")
-           #print("4.) Quest")
+            print("4.) Quest")
             print("4.) Heal")
             print("5.) Exit")
             option = input("--> ")
@@ -46,8 +45,8 @@ class Menu():
                 Store.store(player)
             elif option == "3":
                 Inventory.inventory(player)
-            #elif option == "4":
-                #Quest.quest(player)
+            elif option == "4":
+                Quest.quest(player)
             elif option == "4":
                 Heal.heal(player)
             elif option == "5":
@@ -59,6 +58,7 @@ class Menu():
                 player.health = player.maxhealth
                 player.attack += 9999999999990
                 player.mobkills += 100
+                player.questcompletes += 100
             else:
                 print(" ")
         

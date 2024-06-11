@@ -42,10 +42,8 @@ def playerhit(player):
     if pattack != 1:
         enemy.health -= player.attack
         if enemy.health <= 0:
-            print("debug1")
             fighting = False
-            if enemy == True_Mark:
-                print("debug2")
+            if enemy.name == "True Mark":
                 markwin(player)
             else:
                 win(player)
@@ -97,8 +95,7 @@ def fight(player):
 
 
 def markwin(player):
-    player.gold += enemy.goldgain
-    player.mobkills += 1 
+    os.system('cls')
     print("You have defeated True Mark!") 
     print("Continue Playing?")
     print("1.) Continue")
@@ -113,9 +110,13 @@ def markwin(player):
 
 def win(player):
     player.gold += enemy.goldgain
+    player.mobkills += 1
     print(f"You have defeated the {enemy.name}") 
     print(f"You found {enemy.goldgain} gold!") 
-    return input(" ")
+    if enemy.name == "True Mark":
+        markwin()
+    else:
+        return input(" ")
 
 def dead(player):
     player.health = player.maxhealth

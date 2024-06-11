@@ -10,8 +10,9 @@ class Store():
         print("2.) Dragon Slayer (100 Gold)")
         print("3.) Odachi (250 Gold)")
         print("4.) Antithesis (1000 Gold) (Requires 25 Mob kills)")
-        print("5.) Potion (5 Gold)")
-        print("6.) Back")
+        print("5.) Shodai Kitetsu (2500 Gold) (Requires 50 Quest Completions )")
+        print("6.) Potion (5 Gold)")
+        print("7.) Back")
         option = input(' ')
         if option == "1":
             weapon = "Katana"
@@ -82,7 +83,28 @@ class Store():
                 print("You don't have enough Mob Kills")
                 option = input(' ')
                 Store.store(player)
-        elif option == "5":
+        elif option == "5": 
+            if player.questcompletes >= 50:
+                weapon = "Shodai Kitetsu"
+                if weapon in player.weapons:
+                    print("You already have this weapon")
+                    option = input(' ')
+                    Store.store(player)
+                elif player.gold >= 2500:
+                    player.gold -= 2500
+                    player.weapons.append(weapon)
+                    print("You have bought the Shodai Kitetsu") 
+                    player.storepurchase = True
+                    return input(" ")
+                else:
+                    print("You don't have enough gold")
+                    option = input(' ')
+                    Store.store(player)  
+            else:
+                print("You don't have enough Quest Completions")
+                option = input(' ')
+                Store.store(player)
+        elif option == "6":
             if player.gold >= 5:
                 player.gold -= 5
                 player.potions += 1
@@ -95,9 +117,8 @@ class Store():
                 print("You don't have enough gold")
                 option = input(' ')
                 Store.store(player)
-        elif option == "6":
+        elif option == "7":
             return
-    
         else:
             print("Please pick a valid option")
             option = input(" ")
